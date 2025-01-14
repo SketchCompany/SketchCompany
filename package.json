@@ -1,0 +1,21 @@
+{
+  "name": "sketchcompany",
+  "version": "1.0.0",
+  "description": "This is our public repository for our website to be transparent as possible.\r We are a very small team, currently im alone, but my friends help me sometimes, so we would be grateful for your support.\r You can support us in many different ways like finding busg and problems in our softwares and games or giving us your ideas for some enhancments.\r When it comes to supporting us with another way, it would really help us when you donate us a small amount of money. \r On our [Patreon Homepage](https://patreon.com/SketchCompany) you can select your favourite subscription or buy exclusive products like early access to our Sketchy Games Launcher.\r If you want to get more information or have some questions you can visit our [Discord](https://discord.gg/u94GDJycP4) or ask the community on our [Reddit Server](https://reddit.com/r/SketchCompany).",
+  "main": "company.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node company.mjs",
+    "test": "nodemon company.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

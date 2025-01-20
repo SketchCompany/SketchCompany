@@ -2,8 +2,12 @@
 :root{
     --primary: springgreen;
     --primary-border: rgb(50, 255, 150);
-    --font-primary: rgb(225, 225, 225);
-    --font-secondary: rgb(200,200,200);
+    --primary-background: rgb(0, 205, 110);
+    --secondary: rgb(80, 0, 255);
+    --secondary-border: rgb(95, 40, 255);
+    --font-primary: rgb(0, 0, 0);
+    --font-secondary: rgb(75, 75, 80);
+    --font-tertiary: white;
     --background0: rgb(250,250,255);
     --background1: rgb(245,245,250);
     --background2: rgb(240,240,245);
@@ -11,9 +15,9 @@
     --button-background: rgb(0,75,255);
     --button-border: rgb(0,150,255);
     --box-shadow: rgb(0,0,0,0.4);
-    --darkgray: rgb(70,70,75);
-    --gray: rgb(100,100,105);
-    --hover: rgb(150,150,155);
+    --darkgray: rgb(200,200,205);
+    --gray: rgb(215,215,220);
+    --hover: rgb(220,220,225);
 
     --padding: 5%;
 }
@@ -21,31 +25,29 @@ html{
     scroll-behavior: smooth;
 }
 ::-webkit-scrollbar{
-    background-color: var(--b1);
+    background-color: var(--background1);
     width: 12px;
 }
 ::-webkit-scrollbar-track{
-    background-color: var(--b1);
+    background-color: var(--background1);
     width: 12px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: var(--b2);
+    background-color: var(--background2);
     width: 12px;
     border-radius: 5px;
     transition: all 100ms;
 }
 ::-webkit-scrollbar-thumb:hover{
-    background-color: var(--b3);
+    background-color: var(--background3);
     cursor: pointer;
 }
 body{
-    background-color: var(--b1);
-    color: var(--f0);
+    background-color: var(--background0);
+    color: var(--font-primary);
     font-family: "Open Sans", sans-serif;
     padding: 0;
     margin: 0;
-    background: linear-gradient(340deg, var(--b1) 50%, var(--b3)) 0 0 / 100% 100%;
-    background-attachment: fixed;
     text-shadow: 3px 3px 3px var(--bx0);
 }  
 main{
@@ -56,7 +58,7 @@ main > *{
     animation: dropIn 750ms;
 }
 h1, h2, h3, h4, h5, h6{
-    font-family: "Outfit", system-ui;
+    font-family: "Open Sans", sans-serif;
     margin-top: 10px;
     font-weight: bold;
 }
@@ -76,7 +78,7 @@ h3{
 }
 a{
     text-decoration: none;
-    color: springgreen;
+    color: var(--primary);
     transition: all 100ms;
 }
 a:hover{
@@ -87,7 +89,7 @@ a:hover{
 p{
     line-height: 25px;
     margin-top: 0;
-    color: var(--f1);
+    color: var(--font-secondary);
 }
 img{
     width: 100%;
@@ -95,19 +97,26 @@ img{
     border-radius: 6px;
     pointer-events: none;
 }
+img.icon{
+    width: 21px;
+    height: 21px;
+    border-radius: 6px;
+    margin-top: -1px;
+}
 button{
-    background-color: var(--b2);
+    background-color: var(--background2);
     border-radius: 4px;
     border: 1px solid var(--darkgray);
-    color: var(--f0);
+    color: var(--font-primary);
     padding: 5px 15px;
     width: fit-content;
     transition: all 100ms;
-    font-family: sans-serif;
+    font-family: "Open Sans", sans-serif;
+    color: var(--font-tertiary);
 }
 button:hover{
-    border-color: rgb(0,150,255);
-    background-color: rgb(0,75,255);
+    border-color: var(--button-border);
+    background-color: var(--button-background);
     cursor: pointer;
 }
 button:disabled{
@@ -117,7 +126,7 @@ button:disabled{
     color: var(--gray);
 }
 button.marked{
-    border-color: springgreen;
+    border-color: var(--primary);
     background-color: rgb(0, 170, 100);
     border-radius: 24px;
     padding: 5px 25px;
@@ -128,7 +137,7 @@ button.marked:hover{
     background-color: rgb(80, 0, 255);
 }
 button.marked:disabled{
-    border-color: var(--b3);
+    border-color: var(--background3);
     background-color: var(--darkgray);
     cursor: not-allowed;
     color: var(--gray);
@@ -138,8 +147,8 @@ button.marked:disabled{
     background-color: rgb(175, 0, 150);
 } */
 /* button.marked{
-    border-color: rgb(0,150,255);
-    background-color: rgb(0,75,255);
+    border-color: --button-border;
+    background-color: --button-background;
 }
 button.marked:hover{
     border-color: rgb(150, 100, 255);
@@ -168,13 +177,13 @@ input[type="checkbox"]:focus{
     outline: none;
 }
 input[type="checkbox"]:checked{
-    background-color: springgreen;
-    border-color: rgb(50, 255, 150);
+    background-color: var(--primary);
+    border-color: var(--primary-border);
 }
 input[type="checkbox"]:checked::after{
     content: '\2714';
 	position: absolute;
-	color: var(--f0);
+	color: var(--font-primary);
     font-size: 16px;
     font-weight: bold;
     top: -1px;
@@ -186,23 +195,23 @@ input[type="checkbox"]:checked::after{
     justify-content: center;
 }
 select option{
-    background-color: var(--b2);
-    color: var(--f0);
+    background-color: var(--background2);
+    color: var(--font-primary);
     transition: all 100ms;
     padding: 5px;
 }
 select option:hover{
-    background-color: rgb(0,75,255);
+    background-color: var(--button-background);
     cursor: pointer;
 }
 select:hover{
     cursor: pointer;
 }
 input, select{
-    background-color: var(--b2);
+    background-color: var(--background2);
     border-radius: 4px;
     border: 1px solid var(--darkgray);
-    color: var(--f0);
+    color: var(--font-primary);
     padding: 5px;
     width: 250px;
     transition: all 100ms;
@@ -211,7 +220,7 @@ input, select{
 }
 input:hover, input:not(input[type="checkbox"]):focus, select:hover, select:focus{
     border-color: var(--gray);
-    background-color: var(--b3);
+    background-color: var(--background3);
 }
 input:focus{
     outline: 2px solid var(--darkgray);
@@ -275,20 +284,20 @@ input::-webkit-inner-spin-button {
     outline-color: rgb(255, 50, 50);
 }
 .input-validator.valid .input-viewable button{
-    border-color: springgreen;
+    border-color: var(--primary);
 }
 .input-validator{
     display: flex;
     flex-direction: column;
 }
 .input-validator.valid p{
-    color: springgreen;
+    color: var(--primary);
 }
 .input-validator.valid input{
-    border-color: springgreen;
+    border-color: var(--primary);
 }
 .input-validator.valid input:focus{
-    outline-color: rgb(50, 255, 150);
+    outline-color: var(--primary-border);
 }
 header{
     padding: 20px var(--padding);
@@ -308,40 +317,62 @@ header .left, header .right{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 header .left .title{
     display: flex; 
     justify-content: center; 
     align-items: center;
+    gap: 10px;
     transition: all 100ms;
-    font-family: "IBM Plex Mono", cursive;
     padding: 5px;
     border-radius: 6px;
 }
+header .left .title .icon{
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    margin-top: 0;
+}
 header .left .title p{
     margin: 0;
-    font-size: inherit;
-    color: var(--f0);
+    color: var(--font-primary);
 }
 header .left .title:hover, header .right .bi-list:hover{
     cursor: pointer;
-    background-color: var(--darkgray);
-}
-header .left .title img{
-    width: 32px; 
-    height: 32px;
+    background-color: var(--hover);
 }
 header .right .bi-list{
-    transition: all 100ms;
+    transition: all 250ms;
     font-size: 28px;
     border-radius: 6px;
     padding: 0 5px;
     line-height: 35px;
 }
+header .right a{
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 24px;
+    transition: all 250ms;
+    color: var(--font-primary);
+}
+header .right a:hover{
+    background-color: var(--hover);
+    cursor: pointer;
+    text-decoration: none;
+}
+header .right a.marked{
+    background-color: var(--primary-background);
+    color: var(--font-tertiary);
+    border: 1px solid springgreen;
+}
+header .right a.marked:hover{
+    background-color: var(--secondary);
+    border-color: var(--secondary-border);
+}
 .header-scrolling{
     box-shadow: 0 2px 4px var(--bx0);
-    background-color: var(--b1);
+    background-color: var(--background1);
 }
 .dialog{
     position: fixed;
@@ -357,7 +388,7 @@ header .right .bi-list{
 }
 .dialog .content{
     z-index: 502;
-    background-color: var(--b0);
+    background-color: var(--background0);
     border: 1px solid var(--darkgray);
     border-radius: 12px;
     padding: 25px;
@@ -380,8 +411,8 @@ header .right .bi-list{
     transition: all 100ms;
 }
 .dialog .content .bi-x-lg:hover{
-    background-color: var(--b2);
-    color: var(--f0);
+    background-color: var(--hover);
+    color: var(--font-primary);
     cursor: pointer;
 }
 .dialog .content .crow{ 
@@ -427,13 +458,13 @@ header .right .bi-list{
 }
 .coffcanvas .content{
     z-index: 402;
-    background-color: var(--b0);
+    background-color: var(--background0);
     border: 1px solid var(--darkgray);
     border-width: 0 0 0 1px;
     padding: 35px;
     box-shadow: -5px 0 8px var(--bx0);
     width: 400px;
-    background-image: linear-gradient(340deg, var(--b1) 60%, var(--b2));
+    background-image: linear-gradient(340deg, var(--background1) 60%, var(--background2));
     background-attachment: fixed;
 }
 .coffcanvas .content .options{
@@ -452,20 +483,20 @@ header .right .bi-list{
 }
 .coffcanvas .content .options .links a{
     font-size: 18px;
-    border: 1px solid springgreen;
-    background-color: rgb(0, 170, 100);
+    border: 1px solid var(--primary);
+    background-color: var(--primary-background);
     border-radius: 24px;
-    padding: 5px 25px;
+    padding: 6px 15px;
     transition: all 250ms;
-    color: var(--f0);
+    color: var(--font-tertiary);
 }
 .coffcanvas .content .options .links a:hover{
     text-decoration: none;
-    border-color: rgb(95, 40, 255);
-    background-color: rgb(80, 0, 255);
+    border-color: var(--secondary-border);
+    background-color: var(--secondary);
 }
 .coffcanvas .content .options .links a .bi{
-    margin-right: 5px;
+    margin-right: 2px;
 }
 .coffcanvas .background{
     z-index: 401;
@@ -483,7 +514,6 @@ header .right .bi-list{
 .coffcanvas .top h2{
     width: fit-content;
     margin: 0;
-    font-family: "IBM Plex Mono", cursive;
     font-weight: normal;
 }
 .coffcanvas .top .bi-x-lg{
@@ -491,11 +521,11 @@ header .right .bi-list{
     border-radius: 6px;
     padding: 0 5px;
     transition: all 100ms;
-    color: rgb(175,175,175);
+    color: var(--font-secondary);
 }
 .coffcanvas .top .bi-x-lg:hover{
-    background-color: var(--b3);
-    color: var(--f0);
+    background-color: var(--hover);
+    color: var(--font-primary);
     cursor: pointer;
 }
 .notification{
@@ -508,7 +538,7 @@ header .right .bi-list{
     border-radius: 12px;
     transition: all 100ms;
     border: 1px solid  var(--darkgray);
-    background-color: var(--b0);
+    background-color: var(--background0);
     padding: 20px;
     box-shadow: 2px 2px 4px var(--bx0);
     z-index: 600;
@@ -518,7 +548,7 @@ header .right .bi-list{
     border: 1px solid var(--darkgray);
     transform: scale(1.025);
     cursor: pointer;
-    background-color: var(--b1);
+    background-color: var(--background1);
 }
 .notification div{
     display: flex;
@@ -546,12 +576,12 @@ header .right .bi-list{
     transition: all 100ms;
 }
 .notification i:hover{
-    background-color: var(--b2);
-    color: var(--f0);
+    background-color: var(--hover);
+    color: var(--font-primary);
 }
 .success, .success:hover{
-    color: springgreen !important;
-    border-color: springgreen !important;
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
 }
 .error, .error:hover{
     color: red !important;
@@ -602,7 +632,7 @@ header .right .bi-list{
     font-style: italic;
 }
 .context-menu{
-    background-color: var(--b2);
+    background-color: var(--background2);
     padding: 5px;
     border-radius: 6px;
     border: 1px solid var(--darkgray);
@@ -625,7 +655,7 @@ header .right .bi-list{
     margin-right: 5px;
 }
 .context-menu div:hover, .context-menu button:hover{
-    background-color: var(--b3);
+    background-color: var(--background3);
     border-radius: 6px;
     cursor: pointer;
 }

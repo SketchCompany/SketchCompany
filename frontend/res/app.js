@@ -21,20 +21,26 @@ window.isValid = function(){
 $(document).ready(async function(){
     // check if token is valid
     const token = localStorage.getItem("token")
-    const auth = await send("https://api.sketch-company.de/backend/auth", {token})
-    if(auth.status == 0){
-        console.error("❌ token is not valid")
-        localStorage.removeItem("token")
-        openSite("/login?r=/studio")
+    if(token){
+        const auth = await send("https://api.sketch-company.de/backend/auth", {token})
+        if(auth.status == 0){
+            console.error("❌ token is not valid")
+            localStorage.removeItem("token")
+            openSite("/login?r=" + location.pathname)
+        }
+        else console.log("✅ token is valid")
     }
-    else console.log("✅ token is valid")
+    else console.log("❌ no token found")
 
     $("body").prepend(`
         <header>
             <span class="left">
-                <span onclick="openSite('/')" class="title"><p><span class="bi bi-boxes"></span> Sketchy Studio</p></span>
+                <span onclick="openSite('/')" class="title"><img src="/res?f=img/icon.png" class="icon"> <p>Sketch Company</p></span>
             </span>
             <span class="right">
+                <a href="/service"><span class="bi bi-code-slash"></span> Service</a>
+                <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Spiele</a>
+                <a href="/login?r=/" class="marked"><span class="bi bi-person"></span> Anmelden</a>
                 <span class="bi bi-list" onclick="toggleOffcanvas()"></span>
             </span>
         </header> 
@@ -42,14 +48,16 @@ $(document).ready(async function(){
         <div class="coffcanvas" style="display: none;">
             <div class="content">
                 <div class="top">
-                    <h2><span class="bi bi-boxes"></span> Menu</h2>
+                    <h2><span class="bi bi-menu-button-wide"></span> Menü</h2>
                     <span class="bi bi-x-lg" onclick="toggleOffcanvas()"></span>
                 </div>
                 <div class="options">
                     <div>
                         <div class="links">
                             <a href="/login?r=/"><span class="bi bi-person"></span> Anmelden</a>
-                            <a href="/studio"><span class="bi bi-boxes"></span> Zum Studio</a>
+                            <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Sketchy Games</a>
+                            <a href="https://studio.sketch-company.de"><span class="bi bi-boxes"></span> Sketchy Studio</a>
+                            <a href="https://tictactoe.sketch-company.de"><img class="icon" src="/res?f=img/tictactoe_icon.png"> Online TicTacToe</a>
                         </div>
                     </div>
                 </div>

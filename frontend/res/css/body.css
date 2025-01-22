@@ -14,10 +14,10 @@
     --background3: rgb(230,230,235);
     --button-background: rgb(0,75,255);
     --button-border: rgb(0,150,255);
-    --box-shadow: rgb(0,0,0,0.4);
+    --box-shadow: rgb(0,0,0,0.3);
     --darkgray: rgb(200,200,205);
     --gray: rgb(215,215,220);
-    --hover: rgb(220,220,225);
+    --hover: rgb(215,215,220);
 
     --padding: 5%;
 }
@@ -48,7 +48,6 @@ body{
     font-family: "Open Sans", sans-serif;
     padding: 0;
     margin: 0;
-    text-shadow: 3px 3px 3px var(--bx0);
 }  
 main{
     padding: 2rem var(--padding);
@@ -60,7 +59,7 @@ main > *{
 h1, h2, h3, h4, h5, h6{
     font-family: "Open Sans", sans-serif;
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 600;
 }
 h1{
     font-size: 50px;
@@ -101,7 +100,7 @@ img.icon{
     width: 21px;
     height: 21px;
     border-radius: 6px;
-    margin-top: -1px;
+    margin-top: -2px;
 }
 button{
     background-color: var(--background2);
@@ -110,7 +109,7 @@ button{
     color: var(--font-primary);
     padding: 5px 15px;
     width: fit-content;
-    transition: all 100ms;
+    transition: all 250ms;
     font-family: "Open Sans", sans-serif;
     color: var(--font-tertiary);
 }
@@ -317,7 +316,7 @@ header .left, header .right{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 header .left .title{
     display: flex; 
@@ -341,6 +340,7 @@ header .left .title p{
 header .left .title:hover, header .right .bi-list:hover{
     cursor: pointer;
     background-color: var(--hover);
+    color: var(--font-primary);
 }
 header .right .bi-list{
     transition: all 250ms;
@@ -348,10 +348,11 @@ header .right .bi-list{
     border-radius: 6px;
     padding: 0 5px;
     line-height: 35px;
+    color: var(--font-secondary);
 }
 header .right a{
     font-size: 16px;
-    padding: 6px 10px;
+    padding: 4px 15px;
     border-radius: 24px;
     transition: all 250ms;
     color: var(--font-primary);
@@ -371,8 +372,8 @@ header .right a.marked:hover{
     border-color: var(--secondary-border);
 }
 .header-scrolling{
-    box-shadow: 0 2px 4px var(--bx0);
-    background-color: var(--background1);
+    box-shadow: 0 2px 4px var(--box-shadow);
+    background-color: var(--background0);
 }
 .dialog{
     position: fixed;
@@ -392,7 +393,7 @@ header .right a.marked:hover{
     border: 1px solid var(--darkgray);
     border-radius: 12px;
     padding: 25px;
-    box-shadow: 0 4px 6px var(--bx0);
+    box-shadow: 0 4px 6px var(--box-shadow);
     min-width: 400px;
     animation: fadein 1s;
     display: flex;
@@ -462,7 +463,7 @@ header .right a.marked:hover{
     border: 1px solid var(--darkgray);
     border-width: 0 0 0 1px;
     padding: 35px;
-    box-shadow: -5px 0 8px var(--bx0);
+    box-shadow: -5px 0 8px var(--box-shadow);
     width: 400px;
     background-image: linear-gradient(340deg, var(--background1) 60%, var(--background2));
     background-attachment: fixed;
@@ -540,7 +541,7 @@ header .right a.marked:hover{
     border: 1px solid  var(--darkgray);
     background-color: var(--background0);
     padding: 20px;
-    box-shadow: 2px 2px 4px var(--bx0);
+    box-shadow: 2px 2px 4px var(--box-shadow);
     z-index: 600;
     transition: all 100ms;
 }
@@ -639,7 +640,7 @@ header .right a.marked:hover{
     position: fixed;
     z-index: 1000;
     width: 250px;
-    box-shadow: 2px 4px 4px var(--bx0);
+    box-shadow: 2px 4px 4px var(--box-shadow);
     display: flex;
     flex-direction: column;
 }

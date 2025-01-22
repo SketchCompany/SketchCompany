@@ -4,10 +4,13 @@ import fs from "fs"
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+import func from "./functions.mjs"
+
 const router = express.Router()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const BASE_DIR = __dirname + "/frontend/"
+const BASE_DIR = __dirname + "/"
+const DATA_DIR = __dirname + "/data/"
 const SECRET_KEY = "V?akYlDw!B|?-K3Gm6(;oE8VyH',*U'dMzzHvO91Mpz8kHfEWQCqIZWTEJWu99BEV)8Q}[:}z(sHWN;4E.lqEZIVE{A_Up~4"
 
 const authenticate = async (req, res, next) => {
@@ -35,5 +38,18 @@ const authenticate = async (req, res, next) => {
     }
 }
 
+router.get("/heros", async (req, res) => {
+    try{
+        const data = JSON.parse(await func.read(DATA_DIR + "heros.json"))
+        res.json({
+            status: 1,
+            data
+        })
+    }
+    catch(err){
+        console.error(req.path, err)
+        res.sendStatus(500)
+    }
+})
 
 export default {router}

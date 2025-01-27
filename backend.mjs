@@ -38,9 +38,9 @@ const authenticate = async (req, res, next) => {
     }
 }
 
-router.get("/heros", async (req, res) => {
+router.get("/news", async (req, res) => {
     try{
-        const data = JSON.parse(await func.read(DATA_DIR + "heros.json"))
+        const data = JSON.parse(await func.read(DATA_DIR + "news.json"))
         res.json({
             status: 1,
             data

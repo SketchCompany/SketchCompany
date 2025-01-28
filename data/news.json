@@ -2,16 +2,19 @@
     {
         "title": "Sketchy Games Launcher", 
         "description": "Wir können euch endlich mitteilen, dass wir die Arbeit an der ersten veröffentlichten Version des Sketchy Games Launchers abgeschlossen haben. Der Launcher ist eine kleine Anwendung, die euch helfen wird, eure Spiele und Softwares der Sketch Company auf dem neuesten Stand zu halten und neue zu installieren. Der Launcher ist seit dem 22.01.25 für Windows verfügbar und wird in Zukunft auch für MacOS verfügbar sein. Wir arbeiten derzeit an den letzten Funktionen und werden in den nächsten Wochen ein Update veröffentlichen. Bleibt dran für weitere Informationen.", 
-        "image": "/res?f=heros/hero0.png"
+        "image": "/res?f=heros/hero0.png",
+        "link": "/launcher"
     },
     {
         "title": "Hero 2", 
         "description": "This is the second hero image", 
-        "image": "/res?f=heros/hero1.png"
+        "image": "/res?f=heros/hero1.png",
+        "link": "/"
     },
     {
         "title": "Hero 3", 
         "description": "This is the third hero image", 
-        "image": "/res?f=heros/hero2.png"
+        "image": "/res?f=heros/hero2.png",
+        "link": "/"
     }
 ]

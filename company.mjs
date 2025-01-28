@@ -9,13 +9,14 @@ const PORT = 3000
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const BASE_DIR = __dirname + "/frontend/"
+const RESOURCES_DIR = __dirname + "/res/"
 
 app.use(express.json())
 app.use("/b", backend.router)
 
 app.get("/res", (req, res) => {
     try{
-        if(fs.existsSync(BASE_DIR + "res/" + req.query.f)) res.sendFile(BASE_DIR + "res/" + req.query.f)
+        if(fs.existsSync(RESOURCES_DIR + req.query.f)) res.sendFile(RESOURCES_DIR + req.query.f)
         else res.redirect("/error?m=The requested resource could not be found.")
     }
     catch(err){

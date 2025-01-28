@@ -18,8 +18,9 @@
     
     <!-- custom resources -->
     <title>Ooops, something went wrong | Sketchy Studio</title>
-    <link rel="stylesheet" href="/res?f=css/body.css">
 
+    <script defer src="/res?f=app.js"></script>
+    <link rel="stylesheet" href="/res?f=css/body.css">
 </head>
 <body>
     <main>
@@ -27,7 +28,6 @@
         <p id="message">An unknown error has occurred.</p>
     </main>
 
-    <script src="/res?f=app.js"></script>
     <script>
         const params = new URL(location.href).searchParams
         const errorMessage = params.get("m")

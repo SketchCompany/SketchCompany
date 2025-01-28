@@ -4,19 +4,30 @@
     justify-content: center;
     align-items: center;
     gap: 8em;
-    margin-top: 50px;
+    margin-top: 25px;
     margin-bottom: 150px;
 }
 .landing-page .content{
     position: relative;
+    margin-top: 100px;
 }
 .landing-page .content .background-image{
     position: absolute;
     z-index: 1;
     left: -140px;
-    top: -120px;
+    top: -100px;
     opacity: 0.1;
-    transform: rotateZ(-20deg);
+    transform: rotateZ(-20deg) scale(1.25);
+    transition: all 250ms;
+    animation: rotateIcon 20s linear infinite;
+}
+@keyframes rotateIcon {
+    from{
+        transform: rotateZ(-20deg) scale(1.25);
+    }
+    to{
+        transform: rotateZ(340deg) scale(1.25);
+    }
 }
 .landing-page .landing-image{
     position: relative;
@@ -31,9 +42,32 @@
 .landing-page .landing-image img{
     width: 500px;
 }
+
+.landing-page .content .advantages{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 50px;
+}
+.landing-page .content .advantages p{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: var(--font-primary);
+}
+.landing-page .content .advantages p .bi-check{
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-right: 10px;
+    line-height: 30px;
+}
+
 .info{
     margin-bottom: 100px;
 }
+
 .news{
     display: flex;
     justify-content: space-between;
@@ -92,11 +126,38 @@
     height: 100%;
 }
 .news .content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.news .content .text{
     padding: 25px 35px;
     background-color: var(--background0);
     box-shadow: 0 1px 4px var(--box-shadow);
     border-radius: 6px;
-    width: 50%;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;  
+}
+.news .content .more{
+    background-color: var(--background2);
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: var(--font-primary);
+    font-size: 18px;
+    box-shadow: 0 1px 4px var(--box-shadow);
+}
+.news .content .more:hover{
+    text-decoration: none;
+    background-color: var(--background3);
+}
+.news .content .more.marked{
+    background-color: var(--primary-background);
+    color: var(--font-tertiary);
+}
+.news .content .more.marked:hover{
+    background-color: var(--secondary);
 }
 .news .navigation .mobile-navigation{
     display: flex; 
@@ -108,7 +169,7 @@
     width: 100%;
     font-size: 18px;
 }
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1675px) {
     .news .navigation .images{
         width: 720px;
         height: 410px;
@@ -118,8 +179,9 @@
     .news{
         flex-direction: column;
     }
-    .news .content{
+    .news .content .text{
         width: 100%;
+        height: 225px;
     }
     .news .navigation .images{
         width: 100%;

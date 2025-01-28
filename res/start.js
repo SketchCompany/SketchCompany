@@ -26,6 +26,7 @@ async function fetchNewsData() {
         $(".news .navigation .images").children().first().css("display", "block")
         $(".news .content h2").text(data[0].title)
         $(".news .content p").text(data[0].description)
+        $(".news .content a").attr("href", data[0].link)
 
         $(".news .navigation").children().first().click(function(){
             for (let i = 0; i < data.length; i++) {

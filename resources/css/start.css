@@ -11,17 +11,33 @@
     position: relative;
     margin-top: 100px;
 }
+.landing-page .content h3{
+    color: var(--secondary);
+}
 .landing-page .content .background-image{
     position: absolute;
     z-index: 1;
     left: -140px;
-    top: -100px;
+    top: -6px;
     opacity: 0.1;
-    transform: rotateZ(-20deg) scale(1.25);
     transition: all 250ms;
-    animation: rotateIcon 20s linear infinite;
+    transform: scale(0.6);
+    animation: rotateInnerLogo 20s linear infinite;
 }
-@keyframes rotateIcon {
+.landing-page .content .background-image.ring{
+    animation: rotateLogo 20s linear infinite;
+    transform: rotateZ(-20deg) scale(1.25);
+    top: -100px;
+}
+@keyframes rotateInnerLogo {
+    from{
+        transform: rotateZ(340deg) scale(0.6);
+    }
+    to{
+        transform: rotateZ(-20deg) scale(0.6);
+    }
+}
+@keyframes rotateLogo {
     from{
         transform: rotateZ(-20deg) scale(1.25);
     }
@@ -59,7 +75,7 @@
 .landing-page .content .advantages p .bi-check{
     font-size: 50px;
     font-weight: bold;
-    color: var(--secondary);
+    color: var(--primary);
     margin-right: 10px;
     line-height: 30px;
 }

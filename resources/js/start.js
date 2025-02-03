@@ -1,17 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
     if(isMobile()){
         $(".news .navigation button").remove()
-        $(".news .navigation").css("flex-direction", "column")
-        $(".news").css("gap", "25px")
         $(".news .navigation").append(`
             <div class="mobile-navigation"> 
                 <button><span class="bi bi-arrow-bar-left"></span></button>
                 <button><span class="bi bi-arrow-bar-right"></span></button>
             </div>
         `)
-        $(".news .content .text").css("height", "550px")
-        $(".news .content .text").css("max-height", "550px")
-        $(".news .content .text").css("padding", "20px 25px")
+        const style = $(document.createElement("style"))
+        style.html(`
+            .landing-page{
+                padding: 0 20px;
+                align-items: start;
+            }
+            .landing-page .content{
+                margin-top: 25px;
+            }
+            .landing-page .content .background-image{
+                left: -5px;
+                top: -33px;
+                transform: scale(0.4);
+                animation: rotateInnerLogoMobile 20s linear infinite;
+            }
+            .landing-page .content .background-image.ring{
+                top: -100px;
+                transform: rotateZ(-20deg) scale(0.9);
+                animation: rotateLogoMobile 20s linear infinite;
+            }
+            .news{
+                gap: 25px;
+            }
+            .news .navigation{
+                flex-direction: column
+            }
+            .news .content .text{
+                height: 550px;
+                max-height: 550px;
+                padding: 20px 25px;
+            }
+            .news .navigation .images{
+                height: 225px;
+            }
+        `)
+        $("head").append(style)
     }
 
     fetchNewsData()
@@ -60,55 +91,63 @@ async function fetchNewsData(){
         $(".news .content p").text(data[0].description)
         $(".news .content .more").attr("href", data[0].link)
 
-        $(".news .navigation").children().first().click(function(){
-            for (let i = 0; i < data.length; i++) {
-                const element = $(".news .navigation .images").children().eq(i);
-                if(element.css("display") == "block"){
-                    element.css("display", "none")
-                    lastChange = Date.now()
-                    if(element.prev().length > 0){
-                        element.prev().css("display", "block")
-                        $(".news .content h2").text(data[i - 1].title)
-                        $(".news .content p").text(data[i - 1].description)
-                        $(".news .content .more").attr("href", data[i - 1].link)
-                    }
-                    else{
-                        element.parent().children().last().css("display", "block")
-                        $(".news .content h2").text(data[data.length - 1].title)
-                        $(".news .content p").text(data[data.length - 1].description)
-                        $(".news .content .more").attr("href", data[data.length - 1].link)
-                    }
-                    break
-                }
-            }
-        })
-        $(".news .navigation").children().last().click(function(){
-            for (let i = 0; i < data.length; i++) {
-                const element = $(".news .navigation .images").children().eq(i);
-                if(element.css("display") == "block"){
-                    element.css("display", "none")
-                    lastChange = Date.now()
-                    if(element.next().length > 0){
-                        element.next().css("display", "block")
-                        $(".news .content h2").text(data[i + 1].title)
-                        $(".news .content p").text(data[i + 1].description)
-                        $(".news .content .more").attr("href", data[i + 1].link)
-                    }
-                    else{
-                        element.parent().children().first().css("display", "block")
-                        $(".news .content h2").text(data[0].title)
-                        $(".news .content p").text(data[0].description)
-                        $(".news .content .more").attr("href", data[0].link)
-                    }
-                    break
-                }
-            }
-        })
-
+        if(isMobile()){
+            $(".news .navigation .mobile-navigation").children().last().click(() => next(data))
+            $(".news .navigation .mobile-navigation").children().first().click(() => prev(data))
+        }
+        else{
+            $(".news .navigation").children().last().click(() => next(data))
+            $(".news .navigation").children().first().click(() => prev(data))
+        }
+        
         startLoop(data)
     } 
     catch (error) {
         console.error("Error fetching news data:", error)
+    }
+}
+function next(data){
+    for (let i = 0; i < data.length; i++) {
+        const element = $(".news .navigation .images").children().eq(i);
+        if(element.css("display") == "block"){
+            element.css("display", "none")
+            lastChange = Date.now()
+            if(element.next().length > 0){
+                element.next().css("display", "block")
+                $(".news .content h2").text(data[i + 1].title)
+                $(".news .content p").text(data[i + 1].description)
+                $(".news .content .more").attr("href", data[i + 1].link)
+            }
+            else{
+                element.parent().children().first().css("display", "block")
+                $(".news .content h2").text(data[0].title)
+                $(".news .content p").text(data[0].description)
+                $(".news .content .more").attr("href", data[0].link)
+            }
+            break
+        }
+    }
+}
+function prev(data){
+    for (let i = 0; i < data.length; i++) {
+        const element = $(".news .navigation .images").children().eq(i);
+        if(element.css("display") == "block"){
+            element.css("display", "none")
+            lastChange = Date.now()
+            if(element.prev().length > 0){
+                element.prev().css("display", "block")
+                $(".news .content h2").text(data[i - 1].title)
+                $(".news .content p").text(data[i - 1].description)
+                $(".news .content .more").attr("href", data[i - 1].link)
+            }
+            else{
+                element.parent().children().last().css("display", "block")
+                $(".news .content h2").text(data[data.length - 1].title)
+                $(".news .content p").text(data[data.length - 1].description)
+                $(".news .content .more").attr("href", data[data.length - 1].link)
+            }
+            break
+        }
     }
 }
 function setPause(){

@@ -14,9 +14,13 @@
 .landing-page .content h3{
     color: var(--secondary);
 }
+.landing-page .content .meeting{
+    margin-top: 25px;
+    margin-left: 5px;
+}
 .landing-page .content .background-image{
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     left: -140px;
     top: -6px;
     opacity: 0.1;
@@ -90,6 +94,7 @@
     justify-content: center;
     font-size: 18px;
     margin-top: 50px;
+    gap: 5px;
 }
 .landing-page .content .advantages p{
     display: flex;
@@ -97,8 +102,8 @@
     margin: 0;
     color: var(--font-primary);
 }
-.landing-page .content .advantages p .bi-check{
-    font-size: 50px;
+.landing-page .content .advantages p .bi-check-lg{
+    font-size: 40px;
     font-weight: bold;
     color: var(--primary);
     margin-right: 10px;

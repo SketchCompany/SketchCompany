@@ -12,7 +12,7 @@ $(document).ready(async function(){
                 <span onclick="openSite('/')" class="title"><img src="/res?f=img/icon.png" class="icon"> <p>Sketch Company</p></span>
             </span>
             <span class="right">
-                <a href="/service"><span class="bi bi-code-slash"></span> Beauftragen</a>
+                <a href="/meeting"><span class="bi bi-code-slash"></span> Erstgespräch</a>
                 <a href="/launcher"><span class="bi bi-rocket"></span> Launcher</a>
                 <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Spiele</a>
                 <a href="/login?r=/" class="marked login-element"><span class="bi bi-person"></span> Anmelden</a>
@@ -41,6 +41,11 @@ $(document).ready(async function(){
             </div>
             <div class="background"></div>
         </div>
+    `)
+    $("body").append(`
+        <footer>
+            <p>© ${new Date().getFullYear().toString()} Sketch Company | <a href="https://rights.sketch-company.de/#impressum">Impressum</a> | <a href="https://rights.sketch-company.de/#datenschutzerklärung">Datenschutzerklärung</a> | <a href="https://rights.sketch-company.de/#urheberrecht">Urheberrecht</a></p>
+        </footer>
     `)
 
     if($("body").find(".login-element").length > 0) $("body").find(".login-element").css("display", "none")

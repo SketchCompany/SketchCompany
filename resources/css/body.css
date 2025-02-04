@@ -42,6 +42,9 @@ html{
     background-color: var(--background3);
     cursor: pointer;
 }
+textarea::-webkit-scrollbar, textarea::-webkit-scrollbar-track, textarea::-webkit-scrollbar-thumb{
+    width: 8px;
+}
 body{
     background-color: var(--background0);
     color: var(--font-primary);
@@ -106,7 +109,7 @@ img.icon{
 }
 button{
     background-color: var(--background2);
-    border-radius: 4px;
+    border-radius: 6px;
     /* border: 1px solid var(--darkgray); */
     border: none;
     color: var(--font-primary);
@@ -130,10 +133,11 @@ button:disabled{
 }
 button.marked{
     /* border-color: var(--primary); */
-    background-color: rgb(0, 170, 100);
-    border-radius: 24px;
-    padding: 5px 25px;
+    background-color: var(--primary-background);
+    border-radius: 6px;
+    padding: 10px 20px;
     transition: all 250ms;
+    color: var(--font-tertiary);
 }
 button.marked:hover{
     /* border-color: rgb(95, 40, 255); */
@@ -210,26 +214,31 @@ select option:hover{
 select:hover{
     cursor: pointer;
 }
-input, select{
-    background-color: var(--background2);
+input, select, textarea{
+    background-color: var(--background0);
     border-radius: 4px;
     border: 1px solid var(--darkgray);
     color: var(--font-primary);
     padding: 5px;
-    width: 250px;
+    width: 300px;
     transition: all 250ms;
     outline: 2px solid transparent;
     font-size: inherit;
 }
-input:hover, input:not(input[type="checkbox"]):focus, select:hover, select:focus{
+textarea{
+    height: 100px;
+    width: 400px;
+    resize: none;
+}
+input:hover, input:not(input[type="checkbox"]):focus, textarea:hover, textarea:focus, select:hover, select:focus{
     border-color: var(--gray);
-    background-color: var(--background3);
+    background-color: var(--background1);
 }
-input:focus{
-    outline: 2px solid var(--darkgray);
+input:focus, textarea:focus{
+    outline: 2px solid var(--background2);
 }
-input::placeholder{
-    color: var(--gray);
+input::placeholder, textarea::placeholder{
+    color: var(--darkgray);
 }
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -377,6 +386,13 @@ header .right a.marked:hover{
 .header-scrolling{
     box-shadow: 0 2px 4px var(--box-shadow);
     background-color: var(--background0);
+}
+footer{
+    width: 100%;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .dialog{
     position: fixed;
@@ -677,4 +693,11 @@ header .right a.marked:hover{
 }
 .mobile-on, .mobile-flex-on{
     display: none;
+}
+/* .form{
+
+} */
+.form p{
+    margin-top: 10px;
+    margin-bottom: 0;
 }

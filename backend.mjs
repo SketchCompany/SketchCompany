@@ -48,7 +48,36 @@ router.get("/news", async (req, res) => {
     }
     catch(err){
         console.error(req.path, err)
-        res.sendStatus(500)
+        res.sendStatus(500).json({
+            status: 0,
+            data: err
+        })
+    }
+})
+
+router.post("/book-meeting", async (req, res) => {
+    try{
+        if(req.body.name && req.body.email && req.body.message){
+            const data = {user: "Sketchy", email: "sketch-company@web.de", subject: req.body.name + " möchte ein Erstgespräch mit dir!", message: req.body.message + "\n\n<h2>Raw:</h2><pre>" + JSON.stringify(req.body, null, 3) + "</pre>"}
+            const response = await func.send("https://api.sketch-company.de/email", data)
+            res.json({
+                status: 1,
+                data: response
+            })
+        }
+        else{
+            res.json({
+                status: 0,
+                data: "Dein Name, deine Email oder deine Nachricht wurde nicht angegeben. Bitte überprüfe eine Eingabe und versuche es nochmal!"
+            })
+        }
+    }
+    catch(err){
+        console.error(req.path, err)
+        res.sendStatus(500).json({
+            status: 0,
+            data: err
+        })
     }
 })
 

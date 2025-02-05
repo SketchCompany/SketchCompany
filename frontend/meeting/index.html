@@ -52,16 +52,25 @@
         <h2>Jetzt buchen!</h2>
         <div class="form">
             <div>
-                <p>Dein Name:</p>
-                <input id="name" type="text" placeholder="Dein Name">
+                <p class="label">Dein Name:</p>
+                <span id="nameInvalid" class="input-validator">
+                    <p style="opacity: 0;">Ungültiger Name</p>
+                    <input id="name" type="text" placeholder="Dein Name">
+                </span>
             </div>
             <div>
-                <p>Deine Email:</p>
-                <input id="email" type="email" placeholder="deine.email@example.com">
+                <p class="label">Deine Email:</p>
+                <span id="emailInvalid" class="input-validator">
+                    <p style="opacity: 0;">Ungültige Email</p>
+                    <input id="email" type="email" placeholder="deine.email@example.com">
+                </span>
             </div>
             <div>
-                <p>Deine Nachricht:</p>
-                <textarea id="message" placeholder="Deine Nachricht oder Frage an mich..."></textarea>
+                <p class="label">Deine Nachricht:</p>
+                <span id="messageInvalid" class="input-validator">
+                    <p style="opacity: 0;">Ungültige Nachricht</p>
+                    <textarea id="message" placeholder="Deine Nachricht oder Frage an mich..."></textarea>
+                </span>
             </div>
             <button class="marked" onclick="bookMeeting()"><span class="bi bi-check2-square"></span> Buchen</button>
         </div>

@@ -1,6 +1,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 :root{
-    --primary: springgreen;
+    --primary: rgb(0, 245, 122);
     --primary-border: rgb(50, 255, 150);
     --primary-background: rgb(0, 205, 110);
     --secondary: rgb(80, 0, 255);
@@ -92,7 +92,6 @@ p{
     line-height: 25px;
     margin-top: 0;
     color: var(--font-secondary);
-    text-align: justify;
 }
 img{
     width: 100%;
@@ -282,17 +281,17 @@ input::-webkit-inner-spin-button {
     font-size: 12px;
     line-height: 20px;
     position: absolute;
-    top: -18px;
+    top: -17px;
     left: 0;
     z-index: 5;
 }
 .input-validator.invalid p{
     color: red;
 }
-.input-validator.invalid input{
+.input-validator.invalid input, .input-validator.invalid textarea{
     border-color: red;
 }
-.input-validator.invalid input:focus{
+.input-validator.invalid input:focus, .input-validator.invalid textarea:focus{
     outline-color: rgb(255, 50, 50);
 }
 .input-validator.valid .input-viewable button{
@@ -305,10 +304,10 @@ input::-webkit-inner-spin-button {
 .input-validator.valid p{
     color: var(--primary);
 }
-.input-validator.valid input{
+.input-validator.valid input, .input-validator.valid textarea{
     border-color: var(--primary);
 }
-.input-validator.valid input:focus{
+.input-validator.valid input:focus, .input-validator.valid textarea:focus{
     outline-color: var(--primary-border);
 }
 header{
@@ -349,6 +348,7 @@ header .left .title .icon{
 header .left .title p{
     margin: 0;
     color: var(--font-primary);
+    font-size: inherit;
 }
 header .left .title:hover, header .right .bi-list:hover{
     cursor: pointer;
@@ -635,6 +635,22 @@ footer{
         right: -1000px;
     }
 }
+@keyframes notificationSlideInMobile {
+    from{
+        right: -1000px;
+    }
+    to{
+        right: 0;
+    }
+}
+@keyframes notificationSlideOutMobile {
+    from{
+        right: 0;
+    }
+    to{
+        right: -1000px;
+    }
+}
 @keyframes dropIn {
     0%{
         translate: 0 -25px;
@@ -697,7 +713,10 @@ footer{
 /* .form{
 
 } */
-.form p{
+.form .label{
     margin-top: 10px;
-    margin-bottom: 0;
+    margin-bottom: 8px;
+}
+.form button:last-child{
+    margin-top: 10px;
 }

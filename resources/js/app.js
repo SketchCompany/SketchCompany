@@ -12,7 +12,7 @@ $(document).ready(async function(){
                 <span onclick="openSite('/')" class="title"><img src="/res?f=img/icon.png" class="icon"> <p>Sketch Company</p></span>
             </span>
             <span class="right">
-                <a href="/meeting"><span class="bi bi-code-slash"></span> Erstgespräch</a>
+                <a href="/meeting"><span class="bi bi-chat-left-text"></span> Erstgespräch</a>
                 <a href="/launcher"><span class="bi bi-rocket"></span> Launcher</a>
                 <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Spiele</a>
                 <a href="/login?r=/" class="marked login-element"><span class="bi bi-person"></span> Anmelden</a>
@@ -60,8 +60,18 @@ $(document).ready(async function(){
             main{
                 padding: 1.5rem 10px;
             }
+            p{
+                text-align: justify;
+                font-size: 15px;
+            }
             header{
                 padding: 15px var(--padding);
+            }
+            .notification{
+                width: 95%;
+                height: fit-content;
+                right: 0;
+                margin-right: 2.5%;
             }
             .dialog .content{
                 min-width: 95% !important;
@@ -90,7 +100,7 @@ $(document).ready(async function(){
                 font-size: 25px;
             }
             h1{
-                font-size: 35px;
+                font-size: 38px;
                 line-height: 40px;
                 margin-bottom: 10px;
             }
@@ -341,13 +351,17 @@ async function notifyCb(title, message, type, cb, hideFromCenter){
     element.append($(document.createElement("i")).addClass(["bi", "bi-x-lg"]).click(async function(){
         element.remove()
     }))
-    element.css("animation", "notificationSlideIn 1000ms")
+
+    if(!isMobile()) element.css("animation", "notificationSlideIn 1000ms")
+    else element.css("animation", "notificationSlideInMobile 1000ms")
     setTimeout(function(){
-        element.css("animation", "notificationSlideOut 1000ms")
+        if(!isMobile()) element.css("animation", "notificationSlideOut 1000ms")
+        else element.css("animation", "notificationSlideOutMobile 1000ms")
         setTimeout(() => element.remove(), 750)
     }, duration)
     element.click(async function(){
-        element.css("animation", "notificationSlideOut 1000ms")
+        if(!isMobile()) element.css("animation", "notificationSlideOut 1000ms")
+        else element.css("animation", "notificationSlideOutMobile 1000ms")
         setTimeout(() => element.remove(), 750)
         cb()
     })
@@ -369,13 +383,16 @@ async function notify(title, message, type, hideFromCenter){
     element.append($(document.createElement("i")).addClass(["bi", "bi-x-lg"]).click(async function(){
         element.remove()
     }))
-    element.css("animation", "notificationSlideIn 1000ms")
+    if(!isMobile()) element.css("animation", "notificationSlideIn 1000ms")
+    else element.css("animation", "notificationSlideInMobile 1000ms")
     element.click(async function(){
-        element.css("animation", "notificationSlideOut 1000ms")
+        if(!isMobile()) element.css("animation", "notificationSlideOut 1000ms")
+        else element.css("animation", "notificationSlideOutMobile 1000ms")
         setTimeout(() => element.remove(), 750)
     })
     setTimeout(function(){
-        element.css("animation", "notificationSlideOut 1000ms")
+        if(!isMobile()) element.css("animation", "notificationSlideOut 1000ms")
+        else element.css("animation", "notificationSlideOutMobile 1000ms")
         setTimeout(() => element.remove(), 750)
     }, duration)
     $("body").append(element)
@@ -399,13 +416,16 @@ async function notifyCb(title, message, type, duration, cb, hideFromCenter){
     element.append($(document.createElement("i")).addClass(["bi", "bi-x-lg"]).click(async function(){
         element.remove()
     }))
-    element.css("animation", "notificationSlideIn 1000ms")
+    if(!isMobile()) element.css("animation", "notificationSlideIn 1000ms")
+    else element.css("animation", "notificationSlideInMobile 1000ms")
     setTimeout(function(){
-        element.css("animation", "notificationSlideOut 1000ms")
+        if(!isMobile()) element.css("animation", "notificationSlideOut 1000ms")
+        else element.css("animation", "notificationSlideOutMobile 1000ms")
         setTimeout(() => element.remove(), 750)
     }, finalDuration)
     element.click(async function(){
-        element.css("animation", "notificationSlideOut 1000ms")
+        if(!isMobile()) element.css("animation", "notificationSlideOut 1000ms")
+        else element.css("animation", "notificationSlideOutMobile 1000ms")
         setTimeout(() => element.remove(), 750)
         cb()
     })
@@ -430,13 +450,16 @@ async function notify(title, message, type, duration, hideFromCenter){
     element.append($(document.createElement("i")).addClass(["bi", "bi-x-lg"]).click(async function(){
         element.remove()
     }))
-    element.css("animation", "notificationSlideIn 1000ms")
+    if(!isMobile()) element.css("animation", "notificationSlideIn 1000ms")
+    else element.css("animation", "notificationSlideInMobile 1000ms")
     setTimeout(function(){
-        element.css("animation", "notificationSlideOut 1000ms")
+        if(!isMobile()) element.css("animation", "notificationSlideOut 1000ms")
+        else element.css("animation", "notificationSlideOutMobile 1000ms")
         setTimeout(() => element.remove(), 750)
     }, finalDuration)
     element.click(async function(){
-        element.css("animation", "notificationSlideOut 1000ms")
+        if(!isMobile()) element.css("animation", "notificationSlideOut 1000ms")
+        else element.css("animation", "notificationSlideOutMobile 1000ms")
         setTimeout(() => element.remove(), 750)
     })
     $("body").append(element)

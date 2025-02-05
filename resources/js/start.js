@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const style = $(document.createElement("style"))
         style.html(`
             .landing-page{
-                padding: 0 20px;
+                padding: 0 10px;
                 align-items: start;
+                margin-bottom: 75px;
             }
             .landing-page .content{
                 margin-top: 25px;
@@ -33,6 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .news .navigation{
                 flex-direction: column
             }
+            .news .content{
+                flex-direction: column-reverse;
+            }
             .news .content .text{
                 height: 550px;
                 max-height: 550px;
@@ -40,6 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             .news .navigation .images{
                 height: 225px;
+            }
+            .about .text{
+                padding: 20px 25px;
+            }
+            .about img{
+                width: 100%;
             }
         `)
         $("head").append(style)

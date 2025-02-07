@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `)
         const style = $(document.createElement("style"))
+        const innerSize = 0.35
+        const ringSize = 0.8
         style.html(`
             .landing-page{
                 padding: 0 10px;
@@ -19,14 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             .landing-page .content .background-image{
                 left: -5px;
-                top: -33px;
-                transform: scale(0.4);
+                top: -25px;
+                transform: scale(${innerSize});
                 animation: rotateInnerLogoMobile 20s linear infinite;
             }
             .landing-page .content .background-image.ring{
                 top: -100px;
-                transform: rotateZ(-20deg) scale(0.9);
+                transform: rotateZ(-20deg) scale(${ringSize});
                 animation: rotateLogoMobile 20s linear infinite;
+            }
+            @keyframes rotateInnerLogoMobile {
+                from{
+                    transform: rotateZ(340deg) scale(${innerSize});
+                }
+                to{
+                    transform: rotateZ(-20deg) scale(${innerSize});
+                }
+            }
+            @keyframes rotateLogoMobile {
+                from{
+                    transform: rotateZ(-20deg) scale(${ringSize});
+                }
+                to{
+                    transform: rotateZ(340deg) scale(${ringSize});
+                }
             }
             .news{
                 gap: 25px;

@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    if(isMobile()){
+        const style = $(document.createElement("style"))
+        style.html(`
+
+        `)
+        $("head").append(style)
+    }
+
     const forbiddenUsername = ['"', '§', '$', '%', '&', '/', '\\', '=', '?', '`', '´', '*', ',', ';',':', '<', '>', '²', '³', '{', '}', '[', ']', '^', '|', '~', '@', '€'];
     const forbiddenEmail = Array.from(forbiddenUsername);
     forbiddenEmail.push(['#', "'", '+']);

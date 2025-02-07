@@ -65,7 +65,13 @@ $(document).ready(async function(){
                 font-size: 15px;
             }
             header{
-                padding: 15px var(--padding);
+                padding: 10px var(--padding);
+            }
+            header .left .title{
+                font-size: 20px;
+            }
+            header .right .bi-list{
+                font-size: 24px;
             }
             .notification{
                 width: 95%;
@@ -85,9 +91,6 @@ $(document).ready(async function(){
                 justify-content: start;
                 gap: 15px;
             }
-            .dialog .content .crow input{
-                width: 100%;
-            }
             .dialog .content .crow p{
                 text-align: start;
             }
@@ -96,8 +99,11 @@ $(document).ready(async function(){
                 border: none;
                 padding: 25px;
             }
+            .coffcanvas .content .top h2{
+                font-size: 24px;
+            }
             .coffcanvas .content .top .bi-x-lg{
-                font-size: 25px;
+                font-size: 24px;
             }
             h1{
                 font-size: 38px;
@@ -112,6 +118,9 @@ $(document).ready(async function(){
             h3{
                 font-size: 25px;
                 line-height: 25px;
+            }
+            input, textarea{
+                width: 100%;
             }
         `)
         minScroll = 60

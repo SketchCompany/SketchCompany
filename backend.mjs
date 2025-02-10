@@ -3,6 +3,8 @@ import jwt from "jsonwebtoken"
 import fs from "fs"
 import path from 'path'
 import { fileURLToPath } from 'url'
+import env from "dotenv"
+env.config()
 
 import func from "./functions.mjs"
 
@@ -11,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const BASE_DIR = __dirname + "/"
 const DATA_DIR = __dirname + "/data/"
-const SECRET_KEY = "V?akYlDw!B|?-K3Gm6(;oE8VyH',*U'dMzzHvO91Mpz8kHfEWQCqIZWTEJWu99BEV)8Q}[:}z(sHWN;4E.lqEZIVE{A_Up~4"
+const SECRET_KEY = process.env.TOKEN_ENCRYPTION_KEY
 
 const authenticate = async (req, res, next) => {
     try{
@@ -27,9 +29,11 @@ const authenticate = async (req, res, next) => {
                 // console.error("authenticate: error:", err)
                 return res.sendStatus(403)
             }
-            console.log("authenticate: ✅ successful")
-            req.id = object.id
-            next()
+            else{
+                console.log("authenticate: ✅ successful")
+                req.id = object.id
+                next()
+            }
         })
     }
     catch(err){

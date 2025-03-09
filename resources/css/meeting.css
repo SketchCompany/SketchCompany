@@ -7,3 +7,6 @@
 .form{
     margin-top: 25px;
 }
+#submit{
+    min-width: 125px;
+}

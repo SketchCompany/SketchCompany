@@ -3,8 +3,8 @@ import jwt from "jsonwebtoken"
 import fs from "fs"
 import path from 'path'
 import { fileURLToPath } from 'url'
-import env from "dotenv"
-env.config()
+import dotenv from "dotenv"
+dotenv.config()
 
 import func from "./functions.mjs"
 
@@ -41,6 +41,40 @@ const authenticate = async (req, res, next) => {
         return res.sendStatus(500)
     }
 }
+
+router.post("/auth", (req, res) => {
+    try{
+        jwt.verify(req.body.token, SECRET_KEY, (err, object) => {
+            if(err){
+                //console.error(req.path, err)
+                console.log(req.path, "token is probably expired")
+                res.status(403).json({
+                    status: 0,
+                    data: {
+                        status: 0,
+                        err
+                    }
+                })
+            }
+            else{
+                res.status(200).json({
+                    status: 1,
+                    data: {
+                        status: 1,
+                        object
+                    }
+                })
+            }
+        })
+    }
+    catch(err){
+        console.error(req.path, err)
+        res.status(500).json({
+            status: 0,
+            data: err.toString()
+        })
+    }
+})
 
 router.get("/news", async (req, res) => {
     try{

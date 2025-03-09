@@ -30,11 +30,9 @@ $(document).ready(async function(){
                     <div>
                         <div class="links">
                             <a href="/login?r=/" class="marked login-element"><span class="bi bi-person"></span> Anmelden</a>
+                            <a href="/meeting" class="marked"><span class="bi bi-chat-left-text"></span> Kostenloses Erstgespräch</a>
                             <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Sketchy Games</a>
-                            <a href="https://studio.sketch-company.de"><span class="bi bi-boxes"></span> Sketchy Studio</a>
                             <a href="https://tictactoe.sketch-company.de"><img class="icon" src="/res?f=img/tictactoe_icon.png"> Online TicTacToe</a>
-                            <a href="https://config.sketch-company.de"><span class="bi bi-layout-text-window-reverse"></span> Live Config</a>
-                            <a href="https://docs.sketch-company.de"><span class="bi bi-file-earmark-text"></span> Docs</a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +60,8 @@ $(document).ready(async function(){
             }
             p{
                 text-align: justify;
-                font-size: 15px;
+                font-size: 85%;
+                line-height: 22px;
             }
             header{
                 padding: 10px var(--padding);
@@ -108,12 +107,12 @@ $(document).ready(async function(){
             h1{
                 font-size: 38px;
                 line-height: 40px;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
             h2{
-                font-size: 30px;
+                font-size: 160%;
                 line-height: 30px;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
             }
             h3{
                 font-size: 25px;
@@ -159,7 +158,7 @@ $(document).ready(async function(){
     // check if token is valid
     const token = localStorage.getItem("token")
     if(token){
-        const auth = await send("https://api.sketch-company.de/backend/auth", {token})
+        const auth = await send("/b/auth", {token})
         if(auth.status == 0){
             console.error("❌ token is not valid")
             localStorage.removeItem("token")

@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             .news{
                 gap: 25px;
+                marign-bottom: 100px;
             }
             .news .navigation{
                 flex-direction: column
@@ -56,18 +57,45 @@ document.addEventListener("DOMContentLoaded", () => {
                 flex-direction: column-reverse;
             }
             .news .content .text{
-                height: 550px;
-                max-height: 550px;
-                padding: 20px 25px;
+                height: 400px;
+                max-height: 400px;
+                padding: 20px;
             }
             .news .navigation .images{
-                height: 225px;
+                height: 200px;
             }
-            .about .text{
-                padding: 20px 25px;
+            .block img{
+                width: 75%;
             }
-            .about img{
-                width: 100%;
+            .block .text{
+                padding: 25px 20px;
+            }
+            .features{
+                margin-top: 100px;
+            }
+            .features .top{
+                margin-bottom: 50px;
+            }
+            .features .list{
+                display: flex;
+                flex-direction: column;
+                justify-content: stretch;
+                gap: 3em;
+            }
+            .features .list .element{
+                padding: 40px 20px;
+            }
+            .offers .list .element{
+                padding: 20px;
+            }
+            .offers .list .element p{
+                text-align: start;
+            }
+            .offers .list .element.marked{
+                margin-top: 35px;
+            }
+            .offers .list .element.marked .suggestions-text{
+                top: -35px;
             }
         `)
         $("head").append(style)

@@ -1,20 +1,20 @@
 [
     {
-        "title": "Hero 2", 
-        "description": "This is the second hero image", 
-        "image": "/res?f=heros/hero1.png",
-        "link": "/"
-    },
-    {
-        "title": "Hero 3", 
-        "description": "This is the third hero image", 
-        "image": "/res?f=heros/hero2.png",
-        "link": "/"
-    },
-    {
         "title": "Sketchy Games Launcher", 
         "description": "Wir können euch endlich mitteilen, dass wir die Arbeit an der ersten veröffentlichten Version des Sketchy Games Launchers abgeschlossen haben. Der Launcher ist eine kleine Anwendung, die euch hift, eure Spiele und Softwares von uns auf dem neuesten Stand zu halten und neue zu installieren. Der Launcher ist seit dem 22.01.25 für Windows verfügbar und wird in Zukunft auch für MacOS verfügbar sein. Wir arbeiten derzeit an den letzten Funktionen und werden in den nächsten Wochen ein Update veröffentlichen. Bleibt dran für weitere Informationen.", 
         "image": "/res?f=heros/hero0.png",
         "link": "/launcher"
+    },
+    {
+        "title": "Quantum Drifter", 
+        "description": "This is the third hero image", 
+        "image": "/res?f=heros/hero1.png",
+        "link": "/"
+    },
+    {
+        "title": "2D Adventure One", 
+        "description": "Unser erstes entwickelte Spiel basiert auf der Unity Engine und unterstüzt mehrere Welten, einen Koop Modus sowie ein Level Creator, indem ihr eure ganz eigenen Welten erstellen und danach veröffentlichen könnt. Das Spiel ist sehr anfällig für Bugs und Fehler, da es unser aller erstes je entwickelte Indie-Game 2D Platformer Spiel ist und wir keine Erfahrung mit Spielentwicklung hatten. Aus diesem Grund haben wir den Support für das Spiel schon vor längerer Zeit beendet und fokussieren uns auf unser neustes Spiel \"Quantum Drifter\". Ein 2D Action Sidescroller mit Multiplayer Funktion und coolen Kampftechniken!", 
+        "image": "/res?f=heros/hero2.png",
+        "link": "/"
     }
 ]

@@ -139,7 +139,7 @@ async function fetchNewsData(){
         for (let i = 0; i < data.length; i++) {
             const element = data[i];
             const image = $(document.createElement("img")).attr("src", element.image).attr("alt", "").css("display", "none")
-            //const image = $(document.createElement("div")).css("background-image", `url("${element.image}")`).css("display", "none")
+            if(!i == 0) image.attr("loading", "lazy")
             $(".news .navigation .images").append(image)
         }
         $(".news .navigation .images").children().first().css("display", "block")

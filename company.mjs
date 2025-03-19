@@ -14,6 +14,10 @@ const RESOURCES_DIR = __dirname + "/resources/"
 app.use(express.json())
 app.use("/b", backend.router)
 
+app.get("/robots.txt", (req, res) => {
+    res.sendFile(__dirname + "/robots.txt")
+})
+
 app.get("/res", (req, res) => {
     try{
         if(fs.existsSync(RESOURCES_DIR + req.query.f)) res.sendFile(RESOURCES_DIR + req.query.f)

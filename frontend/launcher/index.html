@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="author" content="Sketch Company">
+    <meta name="publisher" content="Sketch Company">
+    <meta name="copyright" content="Sketch Company">
+    <meta name="description" content="
+        Der Sketchy Games Launcher ist eine Software, 
+        um die Spiele und Softwares von uns entwickelt am besten nutzen zu können. 
+        Im Launcher können Spiele und Softwares heruntergalden werden, der Account verwaltet werden 
+        und mit Freunden gespielt und gechattet werden."
+    >
+    <meta name="keywords" content="
+        Full-Stack, Webentwicklung, Webentwickler, Freelancer, Website, 
+        erstellen, lassen, günstig, kostenlos, Sketch, Company"
+    >
     <link rel="rel-canonical" href="https://sketch-company.de">
 
     <meta http-equiv="Content-Security-Policy" content="
@@ -32,25 +44,34 @@
 
     <link rel="icon" href="/res?f=img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/res?f=css/body.css">
+    <link rel="stylesheet" type="text/css" href="/res?f=css/launcher.css">
 
     <!-- Google tag (gtag.js) -->
     <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-5JE1GBP9VR"></script>
 
-    <title>Ups, etwas ist schief gelaufen! | Sketchy Studio</title>
+    <title>Der Sketchy Games Launcher - jetzt herunterladen | Sketch Company</title>
 </head>
 <body>
+    <div class="gradient-background">
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+        <div class="gradient-sphere sphere-3"></div>
+        <div class="glow"></div>
+        <div class="grid-overlay"></div>
+        <div class="noise-overlay"></div>
+        <div class="particles-container" id="particles-container"></div>
+    </div>
     <main>
-        <h2 style="color: red;">Ups, etwas ist schief gelaufen!</h2>
-        <p id="message">Ein unbekannter Fehler ist aufgetreten.</p>
-        <button onclick="history.back()"><span class="bi bi-arrow-left-circle"></span> Zurück</button>
+        <div class="hero">
+            <h1>Sketchy Games Launcher</h1>
+            <h2>Unser Launcher für eure Spiele</h2>
+            <button class="marked" onclick="openSite('/launcher/downloads')"><span class="bi bi-play-circle"></span> Jetzt Spielen</button>
+        </div>
+        <div class="advantages">
+            <div class="element">
+                
+            </div>
+        </div>
     </main>
-
-    <script>
-        const params = new URL(location.href).searchParams
-        const errorMessage = params.get("m")
-        if(errorMessage){
-            $("#message").html(errorMessage)
-        }
-    </script>
 </body>
 </html>

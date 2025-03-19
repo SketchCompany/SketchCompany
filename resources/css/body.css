@@ -17,7 +17,7 @@
     --box-shadow: rgb(0,0,0,0.2);
     --darkgray: rgb(200,200,205);
     --gray: rgb(215,215,220);
-    --hover: rgb(215,215,220);
+    --hover: rgba(100,100,105, 0.2);
 
     --padding: 5%;
 }

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JE1GBP9VR"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-5JE1GBP9VR');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="rel-canonical" href="https://sketch-company.de">
+
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' https:; 
+        style-src 'self' 'unsafe-inline' https://code.jquery.com https://fonts.googleapis.com https://cdn.jsdelivr.net; 
+        script-src 'self' 'unsafe-inline' https://google-analytics.com https://www.googletagmanager.com https://fonts.googleapis.com https://code.jquery.com https://cdn.jsdelivr.net;   
+    ">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
 
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -29,11 +28,14 @@
 
     <!-- Resources -->
     <script defer src="/res?f=js/app.js"></script>
-    <script defer src="/res?f=js/meeting.js"></script>
+    <script defer src="/res?f=js/start.js"></script>
 
-    <link rel="icon" href="/res?f=img/icon.png">
+    <link rel="icon" href="/res?f=img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/res?f=css/body.css">
     <link rel="stylesheet" type="text/css" href="/res?f=css/meeting.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script defer async src="https://www.googletagmanager.com/gtag/js?id=G-5JE1GBP9VR"></script>
 
     <title>Kostenloses Erstgespräch buchen | Sketch Company</title>
 </head>

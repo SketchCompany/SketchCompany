@@ -15,7 +15,7 @@ $(document).ready(async function(){
     $("body").prepend(`
         <header>
             <span class="left">
-                <span onclick="openSite('/')" class="title"><img src="/res?f=img/icon.png" class="icon"> <p>Sketch Company</p></span>
+                <span onclick="openSite('/')" class="title"><img src="/res?f=img/icon.webp" loading="lazy" class="icon" alt="Sketch Company Logo"> <p>Sketch Company</p></span>
             </span>
             <span class="right">
                 <a href="/meeting"><span class="bi bi-chat-left-text"></span> Erstgespräch</a>
@@ -38,7 +38,7 @@ $(document).ready(async function(){
                             <a href="/login?r=/" class="marked login-element"><span class="bi bi-person"></span> Anmelden</a>
                             <a href="/meeting" class="marked"><span class="bi bi-chat-left-text"></span> Kostenloses Erstgespräch</a>
                             <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Sketchy Games</a>
-                            <a href="https://tictactoe.sketch-company.de"><img class="icon" src="/res?f=img/tictactoe_icon.png"> Online TicTacToe</a>
+                            <a href="https://tictactoe.sketch-company.de"><img class="icon" src="/res?f=img/tictactoe_icon.png" alt="Online TicTacToe Icon"> Online TicTacToe</a>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /login/
+Disallow: /error/
+Disallow: /search?q=
+
+Allow: /
+Allow: /meeting
+Allow: /launcher
+
+Sitemap: https://sketch-company.de/sitemap.xml
+
+# Zusätzliche Regeln für Googlebot
+User-agent: Googlebot
+
+
+# Zusätzliche Regeln für Bingbot
+User-agent: Bingbot

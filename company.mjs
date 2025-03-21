@@ -15,7 +15,10 @@ app.use(express.json())
 app.use("/b", backend.router)
 
 app.get("/robots.txt", (req, res) => {
-    res.sendFile(__dirname + "/robots.txt")
+    res.sendFile(__dirname + "/data/robots.txt")
+})
+app.get("/sitemap.xml", (req, res) => {
+    res.sendFile(__dirname + "/data/sitemap.xml")
 })
 
 app.get("/res", (req, res) => {

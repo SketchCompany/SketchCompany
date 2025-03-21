@@ -12,6 +12,24 @@ window.isMobile = function(){
 let minScroll = 90
 $(document).ready(async function(){
 
+    // check if token is valid
+    let validToken = false
+    const token = localStorage.getItem("token")
+    if(token){
+        const auth = await send("/b/auth", {token})
+        if(auth.status == 0){
+            localStorage.removeItem("token")
+            validToken = false
+            console.error("❌ token is not valid")
+            // openSite("/login?r=" + location.pathname)
+        }
+        else{
+            validToken = true
+            console.log("✅ token is valid")
+        }
+    }
+    else console.log("❌ no token found")
+
     $("body").prepend(`
         <header>
             <span class="left">
@@ -161,21 +179,12 @@ $(document).ready(async function(){
     setHeaderBackground()
     setInputFields()
 
-    // check if token is valid
-    const token = localStorage.getItem("token")
-    if(token){
-        const auth = await send("/b/auth", {token})
-        if(auth.status == 0){
-            console.error("❌ token is not valid")
-            localStorage.removeItem("token")
-            // openSite("/login?r=" + location.pathname)
-        }
-        else console.log("✅ token is valid")
+    if(validToken){
         if($("body").find(".login-element").length > 0) $("body").find(".login-element").remove()
     }
-    else console.log("❌ no token found")
-
-    if($("body").find(".login-element").length > 0) $("body").find(".login-element").css("display", "block")
+    else{
+        if($("body").find(".login-element").length > 0) $("body").find(".login-element").css("display", "block")
+    }
 })
 function setHeaderBackground(){
     if(window.scrollY > minScroll){

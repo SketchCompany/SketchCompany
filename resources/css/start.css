@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12em;
+    gap: 10em;
     margin-top: 25px;
     margin-bottom: 200px;
 }
@@ -54,10 +54,10 @@
         max-width: 0;
     }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .landing-page{
         flex-direction: column;
-        gap: 25px;
+        gap: 75px;
     }
 }
 .landing-page .landing-image{

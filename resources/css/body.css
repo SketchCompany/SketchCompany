@@ -9,7 +9,7 @@
     --font-secondary: rgb(35, 35, 40);
     --font-tertiary: white;
     --background0: rgb(250,250,255);
-    --background1: rgb(240,240,245);
+    --background1: rgb(240,240,250);
     --background2: rgb(225,225,230);
     --background3: rgb(205,205,210);
     --button-background: rgb(0,75,255);
@@ -143,6 +143,24 @@ button.marked:hover{
     background-color: rgb(80, 0, 255);
 }
 button.marked:disabled{
+    /* border-color: var(--background3); */
+    background-color: var(--darkgray);
+    cursor: not-allowed;
+    color: var(--font-tertiary);
+}
+button.marked-reverse{
+    /* border-color: var(--primary); */
+    background-color: rgb(80, 0, 255);
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 250ms;
+    color: var(--font-tertiary);
+}
+button.marked-reverse:hover{
+    background-color: var(--primary-background);
+    /* border-color: rgb(95, 40, 255); */
+}
+button.marked-reverse:disabled{
     /* border-color: var(--background3); */
     background-color: var(--darkgray);
     cursor: not-allowed;
@@ -514,6 +532,17 @@ footer{
 .coffcanvas .content .options .links a.marked:hover{
     background-color: var(--secondary);
 }
+.coffcanvas .content .options .links a.marked-reverse{
+    background-color: rgb(80, 0, 255);
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 250ms;
+    color: var(--font-tertiary);
+}
+.coffcanvas .content .options .links a.marked-reverse:hover{
+    background-color: var(--primary-background);
+}
+
 .coffcanvas .content .options .links a .bi{
     margin-right: 2px;
 }
@@ -713,4 +742,13 @@ footer{
 }
 .form button:last-child{
     margin-top: 10px;
+}
+.scroll-animation-hidden{
+    opacity: 0;
+    transition: all 1s;
+    transform: scale(0.9);
+}
+.scroll-animation-visible{
+    opacity: 1;
+    transform: scale(1);
 }

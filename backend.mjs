@@ -76,9 +76,9 @@ router.post("/auth", (req, res) => {
     }
 })
 
-router.get("/news", async (req, res) => {
+router.get("/data/:file", async (req, res) => {
     try{
-        const data = JSON.parse(await func.read(DATA_DIR + "news.json"))
+        const data = JSON.parse(await func.read(DATA_DIR + path.basename(req.params.file) + ".json"))
         res.json({
             status: 1,
             data

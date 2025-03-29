@@ -10,16 +10,14 @@
     <meta property="og:image" name="og:image" content="https://sketch-company.de/res?f=img/logo.png">
     <meta name="theme-color" data-react-helmet="true" content="#00ffc3">
     <meta property="og:description" name="og:description" content="
-        Ich bin Max, selbständiger Webentwickler und Gründer von Sketch Company, 
-        und erstelle Websites, schnell, günstig und mit langfristigem Support. 
-        Dabei achte ich auf eine sehr gute Zusammenarbeit mit meinen Kunden 
-        und maßgeschneiderte Lösungen auf Berücksichtigung der Bedürfnisse der Kunden!"
+        Der Sketchy Games Launcher ist eine Anwendungen für eure Spiele von uns. 
+        Mit dieser Anwendung könnt ihr unsere Games und Softwares herunterladen, verwenden 
+        und mit Freunden chatten. Außerdem werden euere Spiele automatisch aktualisiert."
     >
     <meta name="description" content="
-        Ich bin Max, selbständiger Webentwickler und Gründer von Sketch Company, 
-        und erstelle Websites, schnell, günstig und mit langfristigem Support. 
-        Dabei achte ich auf eine sehr gute Zusammenarbeit mit meinen Kunden 
-        und maßgeschneiderte Lösungen auf Berücksichtigung der Bedürfnisse der Kunden!"
+        Der Sketchy Games Launcher ist eine Anwendungen für eure Spiele von uns. 
+        Mit dieser Anwendung könnt ihr unsere Games und Softwares herunterladen, verwenden 
+        und mit Freunden chatten. Außerdem werden euere Spiele automatisch aktualisiert."
     >
     <meta name="keywords" content="
         Full-Stack, Webentwicklung, Webentwickler, Freelancer, Website, 
@@ -49,7 +47,7 @@
 
     <!-- Scripts -->
     <script defer src="/res?f=js/app.js"></script>
-    <script defer src="/res?f=js/start.js"></script>
+    <script defer src="/res?f=js/launcher.js"></script>
 
     <!-- Resources -->
     <link rel="icon" href="/res?f=img/favicon.ico">
@@ -71,15 +69,108 @@
         <div class="noise-overlay"></div>
         <div class="particles-container" id="particles-container"></div>
     </div>
+    
     <main>
         <div class="hero">
             <h1>Sketchy Games Launcher</h1>
             <h2>Unser Launcher für eure Spiele</h2>
-            <button class="marked" onclick="openSite('/launcher/downloads')"><span class="bi bi-play-circle"></span> Jetzt Spielen</button>
+            <button class="marked play" onclick="openSite('/launcher/downloads')"><span class="bi bi-play-circle"></span> Jetzt Spielen</button>
+        </div>
+        <div class="intro scroll-animation-hidden">
+            <div>
+                <h2>Was ist der Sketchy Games Launcher?</h2>
+                <p>
+                    Der Sketchy Games Launcher bietet dir die Möglichkeit alle Games und Softwares von uns herunterzuladen, 
+                    sie zu verwenden und zu verwalten. Ein Launcher ist eine Anwendung bzw. ein Programm das alle diese
+                    Aufgaben übernimmt, um dir die Nutzung zu vereinfachen. 
+                </p>
+            </div>
         </div>
         <div class="advantages">
-            <div class="element">
-                
+            <div class="top">
+                <h1>Features des Launchers</h1>
+            </div>
+            <div class="list">
+                <div class="element scroll-animation-hidden">
+                    <h3>Games und Softwares</h3>
+                    <p>
+                        Mit dem Launcher erhaltet ihr den vollen Zugriff auf alle Games und 
+                        Softwares sowie andere spannende Features. Ihr könnt sie ganz einfach aus dem
+                        Store herunterladen.
+                    </p>
+                </div>
+                <div class="element scroll-animation-hidden">
+                    <h3>Friends und Dateien</h3>
+                    <p>
+                        In der zukünftigen Version könnt ihr mit dem Launcher auch Freunde finden.
+                        Durch unser neues System wird es möglich Freunde hinzuzufügen und dann auch 
+                        später mit ihnen zu spielen. Außerdem könnt ihr ganz einfach Dateien, wie Speicherstände
+                        oder Weltdaten miteinander austauschen.
+                    </p>
+                </div>
+                <div class="element scroll-animation-hidden">
+                    <h3>Automatische Updates</h3>
+                    <p>
+                        Nicht nur eure Games und Softwares werden aktualisiert, sondern auch der Launcher!
+                        Nach einem kurzem Hinweis beim öffnen des Launchers wird im Hintergrund das Update
+                        heruntergeladen und der Launcher aktualisiert sich dann von selbst.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="impressions scroll-animation-hidden">
+            <div class="top">
+                <h1>Impressionen aus der 0.0.11 BETA</h1>
+            </div>
+            <div class="navigation">
+                <button class="left"><span class="bi bi-arrow-bar-left"></span></button>
+                <div class="images">
+                    <img src="/res?f=launcher/0.0.11_start_screen.webp" style="display: block;" alt="Sketchy Games Launcher - Start Screen">
+                    <img src="/res?f=launcher/0.0.11_library_screen.webp" style="display: none;" alt="Sketchy Games Launcher - Library Screen">
+                    <img src="/res?f=launcher/0.0.11_store_screen.webp" style="display: none;" alt="Sketchy Games Launcher - Store Screen">
+                    <img src="/res?f=launcher/0.0.11_store_screen2.webp" style="display: none;" alt="Sketchy Games Launcher - Store Screen 2">
+                    <img src="/res?f=launcher/0.0.11_downloads_screen.webp" style="display: none;" alt="Sketchy Games Launcher - Downloads Screen">
+                    <img src="/res?f=launcher/0.0.11_account_screen.webp" style="display: none;" alt="Sketchy Games Launcher - Account Screen">
+                    <img src="/res?f=launcher/0.0.11_settings_screen.webp" style="display: none;" alt="Sketchy Games Launcher - Settings Screen">
+                    <img src="/res?f=launcher/0.0.11_patch_notes_screen.webp" style="display: none;" alt="Sketchy Games Launcher - Patch Notes Screen">
+                    <img src="/res?f=launcher/0.0.11_news_notifications_screen.webp" style="display: none;" alt="Sketchy Games Launcher - News Notifications Screen">
+                </div>
+                <button class="right"><span class="bi bi-arrow-bar-right"></span></button>
+                <div class="content">
+                    <h2>Startseite</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, porro natus tempore quisquam inventore fugit vel iure modi ducimus. Porro voluptas obcaecati incidunt earum tempora, suscipit fuga asperiores a aperiam!</p>
+                </div>
+            </div>
+        </div>
+        <div class="techniques">
+            <div class="top">
+                <h1>Technische Details</h1>
+            </div>
+            <div class="list">
+                <div class="element scroll-animation-hidden">
+                    <h3>Electron und Chromium</h3>
+                    <p>
+                        Der Launcher wird auf der Chromium Engine gerendert und basiert auf dem 
+                        Electron Framework. Dabei handelt es sich um eine Anwendung die mit 
+                        HTML, CSS und JavaScript entwickelt wird.
+                    </p>
+                </div>
+                <div class="element scroll-animation-hidden">
+                    <h3>Sketch Company API</h3>
+                    <p>
+                        Durch die Verbindung zur Sketch Company API hat der Launcher vollen und
+                        dynamischen Zugriff auf die aktuellsten Daten, besonders für den Store.
+                        Außerdem wird somit auch die Account Verwaltung in der Anwednung möglich.
+                    </p>
+                </div>
+                <div class="element scroll-animation-hidden">
+                    <h3>Sicherheit</h3>
+                    <p>
+                        Alle Daten werden mit einer sehr schwer lösbaren Verschlüsselung gesichert.
+                        Dabei achten wir darauf, dass alle wichtigen Daten mit einem komplexen Algorithmus
+                        sicher und versteckt bleiben.
+                    </p>
+                </div>
             </div>
         </div>
     </main>

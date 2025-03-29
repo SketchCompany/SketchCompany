@@ -55,6 +55,7 @@ $(document).ready(async function(){
                         <div class="links">
                             <a href="/login?r=/" class="marked login-element"><span class="bi bi-person"></span> Anmelden</a>
                             <a href="/meeting" class="marked"><span class="bi bi-chat-left-text"></span> Kostenloses Erstgespräch</a>
+                            <a href="/launcher" class="marked-reverse"><span class="bi bi-rocket"></span> Sketchy Games Launcher</a>
                             <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Sketchy Games</a>
                             <a href="https://tictactoe.sketch-company.de"><img class="icon" src="/res?f=img/tictactoe_icon.png" alt="Online TicTacToe Icon"> Online TicTacToe</a>
                         </div>
@@ -175,6 +176,21 @@ $(document).ready(async function(){
             }
         })
     }
+
+    // scroll animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("scroll-animation-visible")
+            }
+            else{
+                entry.target.classList.remove("scroll-animation-visible")
+            }
+        })
+    })
+
+    const hiddenElements = $(".scroll-animation-hidden").get()
+    hiddenElements.forEach((element) => observer.observe(element))
 
     setHeaderBackground()
     setInputFields()

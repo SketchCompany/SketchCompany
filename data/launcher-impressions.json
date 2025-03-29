@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Startseite", 
+        "description": "Das ist die Startseite des Launchers. Hier kann eine Übersicht an allen wichtigen Funktionen gefunden werden, wie die Neuigkeiten, das zuletzt gespielte Spiel oder die Möglichkeit alle Spiele anzusehen und noch vieles mehr."
+    },
+    {
+        "title": "Library", 
+        "description": "Das ist die Blibliothek in der Spiele als auch Softwares gefunden werden können. Von hier aus kannst du sie alle verwalten und auch wieder deinstallieren. Außerdem kannst bereits installierte Spiele hinzufügen und vom Launcher tracken lassen."
+    },
+    {
+        "title": "Store", 
+        "description": "Hier findet die Magie statt. Im Store kannst du alle Spiele und Softwares vorerst kostenlos herunterladen. Außerdem kannst du dir jedes Spiel genaustens ansehen und gegebenenfalls dir die Patch Notes durchlesen. Außerdem stehen dir Bilder aus dem Spiel zur verfügung."
+    },
+    {
+        "title": "Store", 
+        "description": "Die verschiedenen Spiele sind auch in bestimmte Kategorien unterteilt, um eine bessere Übersicht im Store zu garantieren. Falls du mehrere Spiele in einer Kategorie hast, kannst du auch nach Links oder Rechts navigieren, um mehr Spiele und Softwares angezeigt zu bekommen."
+    },
+    {
+        "title": "Downloads", 
+        "description": "Sofern du ein Spiel zum herunterladen angeklickt hast, wird es hier erscheinen und du kannst sehen wie weit der Download bereits fortgeschritten ist. Falls du dich umentschieden hast kannst du auch den Download abbrechen. Dazu gibt es auch eine Download Warteschlange für mehrer Downloads gleichzeitig."
+    },
+    {
+        "title": "Account", 
+        "description": "Falls du deine Account Daten von deinem Sketch Company Account einsehen oder ändern willst, dann kannst du das hier tun. Eine Historie all deiner Käufe bzw. Downloads findest du auch hier. Wenn du dich mit einem anderen Acount anmelden willst kannst du dich hier auch wieder abmelden."
+    },
+    {
+        "title": "Settings", 
+        "description": "Hier findest du alle möglichen Einstellung des Launchers! Falls dich die Benachrichtigungen nerven oder du den Launcher nach einem Spielstart geöffnet lassen willst, dann kannst du diese Funktionen hier anpassen. Auch der Login zum Start des Launchers kann hier deaktiviert werden."
+    },
+    {
+        "title": "Patch Notes", 
+        "description": "Zu Beginn des Launchers werden viele Updates erscheinen. Diese werden automatisch installiert und du wirst dabei kurz darauf hingewiesen, dass ein Update im Hintergrund installiert wird. Hier hast du die Möglichkeit die jeweiligen Ändereungen in den verschiedenen Version zu lesen."
+    },
+    {
+        "title": "Benachrichtigungen", 
+        "description": "Um dir einen besseren Überblick über die ganzen Nachrichten zu bieten, haben wir ein Benachrichtungs Abschnitt für dich erstellt, indem du alle Benachrichtigungen lesen, mit ihnen interagieren, und diese auch löschen kannst."
+    }
+]

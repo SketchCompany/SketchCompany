@@ -134,7 +134,7 @@ function startLoop(data){
 }
 async function fetchNewsData(){
     try {
-        const data = await get("/b/news")
+        const data = await get("/b/data/news")
 
         for (let i = 0; i < data.length; i++) {
             const element = data[i];

@@ -16,18 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 font-size: 45px;
                 margin-bottom: 25px;
             }
-            .intro{
+            .intro, .advantages, .impressions, .techniques, .goals{
                 margin-top: 100px;
             }
-            .intro div, .advantages .list .element, .techniques .list .element{
+            .intro div, .advantages .list .element, .techniques .list .element, .goals .list-grid .element{
                 padding: 20px;
-            }
-            .advantages{
-                margin-top: 100px;
             }
             .impressions{
                 flex-direction: column;
-                margin-top: 100px;
             }
             .impressions .navigation{
                 flex-direction: column;
@@ -45,6 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             .impressions .navigation .content p{
                 color: var(--font-secondary)
+            }
+            .list-grid{
+                display: flex;
+                flex-direction: column;
+                justify-content: stretch;
+                gap: 3em;
             }
         `)
         $("head").append(style)

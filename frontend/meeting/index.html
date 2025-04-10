@@ -25,28 +25,14 @@
         Full-Stack, Webentwicklung, Webentwickler, Freelancer, Website, 
         erstellen, lassen, günstig, kostenlos, Sketch, Company"
     >
-    <link rel="rel-canonical" href="https://sketch-company.de">
-
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self' https:; 
-        style-src 'self' 'unsafe-inline' https://code.jquery.com https://fonts.googleapis.com https://cdn.jsdelivr.net; 
-        script-src 'self' 'unsafe-inline' https://google-analytics.com https://www.googletagmanager.com https://fonts.googleapis.com https://code.jquery.com https://cdn.jsdelivr.net;   
-    ">
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
 
     <link rel="rel-canonical" href="https://sketch-company.de">
 
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self' https:; 
-        style-src 'self' 'unsafe-inline' https://code.jquery.com https://fonts.googleapis.com https://cdn.jsdelivr.net; 
-        script-src 'self' 'unsafe-inline' https://google-analytics.com https://www.googletagmanager.com https://fonts.googleapis.com https://code.jquery.com https://cdn.jsdelivr.net;   
-    ">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-
 
     <!-- jquery -->
-    <script async src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -58,7 +44,7 @@
 
     <!-- Scripts -->
     <script defer src="/res?f=js/app.js"></script>
-    <script defer src="/res?f=js/start.js"></script>
+    <script defer src="/res?f=js/meeting.js"></script>
 
     <!-- Resources -->
     <link rel="icon" href="/res?f=img/favicon.ico">
@@ -73,39 +59,49 @@
 <body>
     <main>
         <div class="info">
-            <h2>Kostenloses Erstgespräch</h2>
-            <p>
-                Um dich besser kennenzulernen und deine persönlichen Bedürfnisse und Ziele zu erfassen, biete ich ein kostenloses Erstgespräch an. 
-                Du kannst dabei erste Fragen stellen und dir einen Eindruck von meinen Dienstleistungen 
-                und meiner Arbeitsweise verschaffen - ohne finanzielles Risiko. Wir werden gemeinsam herausfinden, 
-                ob und in welcher Weise ich dir optimal helfen kann. 
-                Auf dieser Basis kannst du dich dann gut über eine mögliche weitere Zusammenarbeit entscheiden.
-            </p>
+            <div class="top">
+                <h3>Kostenloses Erstgespräch</h3>
+                <h1>Jetzt buchen!</h1>
+                <p>
+                    Um dich besser kennenzulernen und deine persönlichen Bedürfnisse und Ziele zu erfassen, biete ich ein kostenloses Erstgespräch an. 
+                    Du kannst dabei erste Fragen stellen und dir einen Eindruck von meinen Dienstleistungen 
+                    und meiner Arbeitsweise verschaffen - ohne finanzielles Risiko. Wir werden gemeinsam herausfinden, 
+                    ob und in welcher Weise ich dir optimal helfen kann. 
+                    Auf dieser Basis kannst du dich dann gut über eine mögliche weitere Zusammenarbeit entscheiden.
+                </p>
+            </div>
+            <div class="box">
+                <div class="content">
+                    <div class="left">
+                        <h2>Buchungsformular</h2>
+                        <div class="form">
+                            <div>
+                                <p class="label">Dein Name:</p>
+                                <span id="nameInvalid" class="input-validator">
+                                    <p style="opacity: 0;">Ungültiger Name</p>
+                                    <input id="name" type="text" placeholder="Dein Name">
+                                </span>
+                            </div>
+                            <div>
+                                <p class="label">Deine Email:</p>
+                                <span id="emailInvalid" class="input-validator">
+                                    <p style="opacity: 0;">Ungültige Email</p>
+                                    <input id="email" type="email" placeholder="deine.email@example.com">
+                                </span>
+                            </div>
+                            <div>
+                                <p class="label">Deine Nachricht:</p>
+                                <span id="messageInvalid" class="input-validator">
+                                    <p style="opacity: 0;">Ungültige Nachricht</p>
+                                    <textarea id="message" placeholder="Deine Nachricht oder Frage an mich..."></textarea>
+                                </span>
+                            </div>
+                            <button id="submit" class="marked" title="Überprüfe deine Eingabe bevor du einen Termin buchst" disabled><span class="bi bi-check2-square"></span> Buchen</button>
+                        </div>
+                    </div>
+                </div>
+            </div>        
         </div>
-        <h2>Jetzt buchen!</h2>
-        <div class="form">
-            <div>
-                <p class="label">Dein Name:</p>
-                <span id="nameInvalid" class="input-validator">
-                    <p style="opacity: 0;">Ungültiger Name</p>
-                    <input id="name" type="text" placeholder="Dein Name">
-                </span>
-            </div>
-            <div>
-                <p class="label">Deine Email:</p>
-                <span id="emailInvalid" class="input-validator">
-                    <p style="opacity: 0;">Ungültige Email</p>
-                    <input id="email" type="email" placeholder="deine.email@example.com">
-                </span>
-            </div>
-            <div>
-                <p class="label">Deine Nachricht:</p>
-                <span id="messageInvalid" class="input-validator">
-                    <p style="opacity: 0;">Ungültige Nachricht</p>
-                    <textarea id="message" placeholder="Deine Nachricht oder Frage an mich..."></textarea>
-                </span>
-            </div>
-            <button id="submit" class="marked" onclick="bookMeeting()" title="Überprüfe deine Eingabe bevor du einen Termin buchst" disabled><span class="bi bi-check2-square"></span> Buchen</button>
-        </div>
+        
     </main>
 </body>

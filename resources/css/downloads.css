@@ -1,0 +1,19 @@
+.top{
+    max-width: 750px;
+}
+.downloads{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+.installation{
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 25px;
+}
+.installation .top{
+    max-width: 700px;
+}

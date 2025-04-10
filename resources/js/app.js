@@ -33,14 +33,14 @@ $(document).ready(async function(){
     $("body").prepend(`
         <header>
             <span class="left">
-                <span onclick="openSite('/')" class="title"><img src="/res?f=img/icon.webp" loading="lazy" class="icon" alt="Sketch Company Logo"> <p>Sketch Company</p></span>
+                <span href="/" class="title"><img src="/res?f=img/icon.webp" loading="lazy" class="icon" alt="Sketch Company Logo"> <p>Sketch Company</p></span>
             </span>
             <span class="right">
                 <a href="/meeting"><span class="bi bi-chat-left-text"></span> Erstgespräch</a>
                 <a href="/launcher"><span class="bi bi-rocket"></span> Launcher</a>
                 <a href="https://sketchy-games.sketch-company.de" target="_blank"><span class="bi bi-controller"></span> Spiele</a>
                 <a href="/login?r=/" class="marked login-element"><span class="bi bi-person"></span> Anmelden</a>
-                <span class="bi bi-list" onclick="toggleOffcanvas()"></span>
+                <span class="button-toggleOffcanvas bi bi-list"></span>
             </span>
         </header> 
 
@@ -48,7 +48,7 @@ $(document).ready(async function(){
             <div class="content">
                 <div class="top">
                     <h2><span class="bi bi-menu-button-wide"></span> Menü</h2>
-                    <span class="bi bi-x-lg" onclick="toggleOffcanvas()"></span>
+                    <span class="button-toggleOffcanvas bi bi-x-lg"></span>
                 </div>
                 <div class="options">
                     <div>
@@ -57,7 +57,7 @@ $(document).ready(async function(){
                             <a href="/meeting" class="marked"><span class="bi bi-chat-left-text"></span> Kostenloses Erstgespräch</a>
                             <a href="/launcher" class="marked-reverse"><span class="bi bi-rocket"></span> Sketchy Games Launcher</a>
                             <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Sketchy Games</a>
-                            <a href="https://tictactoe.sketch-company.de"><img class="icon" src="/res?f=img/tictactoe_icon.png" alt="Online TicTacToe Icon"> Online TicTacToe</a>
+                            <a href="https://tictactoe.sketch-company.de"><img class="icon" src="/res?f=img/tictactoe_icon.webp" alt="Online TicTacToe Icon"> Online TicTacToe</a>
                         </div>
                     </div>
                 </div>
@@ -194,6 +194,7 @@ $(document).ready(async function(){
 
     setHeaderBackground()
     setInputFields()
+    setButtons()
 
     if(validToken){
         if($("body").find(".login-element").length > 0) $("body").find(".login-element").remove()
@@ -202,6 +203,24 @@ $(document).ready(async function(){
         if($("body").find(".login-element").length > 0) $("body").find(".login-element").css("display", "block")
     }
 })
+function setButtons(){
+    $("span.button-toggleOffcanvas").each((index, element) => {
+        $(element).click(toggleOffcanvas)
+    })
+    $("span").each((index, element) => {
+        if($(element).attr("href")){
+            $(element).click(() => openSite($(element).attr("href")))
+        }
+    })
+    $("button").each((index, element) => {
+        if($(element).attr("href")){
+            $(element).click(() => openSite($(element).attr("href")))
+        }
+    })
+    // $("span").each((index, element) => {
+    //     $(element).click(() => openSite($(element).attr("href")))
+    // })
+}
 function setHeaderBackground(){
     if(window.scrollY > minScroll){
         $("header").addClass("header-scrolling")

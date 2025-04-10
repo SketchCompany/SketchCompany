@@ -1,11 +1,11 @@
 .info{
     margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
 }
-.info p{
-    max-width: 750px;
-}
-.form{
-    margin-top: 25px;
+.info .top{
+    max-width: 800px;
 }
 #submit{
     min-width: 125px;

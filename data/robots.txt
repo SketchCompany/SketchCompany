@@ -1,11 +1,11 @@
 User-agent: *
-Disallow: /login/
 Disallow: /error/
 Disallow: /search?q=
 
 Allow: /
 Allow: /meeting
 Allow: /launcher
+Allow: /launcher/downloads
 
 Sitemap: https://sketch-company.de/sitemap.xml
 

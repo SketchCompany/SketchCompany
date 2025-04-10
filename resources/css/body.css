@@ -10,7 +10,7 @@
     --font-tertiary: white;
     --background0: rgb(250,250,255);
     --background1: rgb(240,240,250);
-    --background2: rgb(225,225,230);
+    --background2: rgb(225,225,240);
     --background3: rgb(205,205,210);
     --button-background: rgb(0,75,255);
     --button-border: rgb(0,150,255);
@@ -80,7 +80,8 @@ h3{
 }
 a{
     text-decoration: none;
-    color: var(--primary);
+    color: var(--primary-background);
+    font-weight: 550;
     transition: all 250ms;
 }
 a:hover{
@@ -112,7 +113,7 @@ button{
     /* border: 1px solid var(--darkgray); */
     border: none;
     color: var(--font-primary);
-    padding: 5px 15px;
+    padding: 10px 20px;
     width: fit-content;
     transition: all 250ms;
     font-family: "Open Sans", sans-serif;
@@ -379,6 +380,7 @@ header .right a{
     padding: 8px 15px;
     border-radius: 24px;
     color: var(--font-primary);
+    font-weight: 500;
 }
 header .right a:hover{
     background-color: var(--hover);
@@ -487,6 +489,7 @@ footer{
     z-index: 400;
     display: flex;
     justify-content: end;
+    transition: all 250ms;
 }
 .coffcanvas .content{
     z-index: 402;
@@ -519,6 +522,7 @@ footer{
     padding: 10px 20px;
     color: var(--font-primary);
     font-size: 18px;
+    font-weight: normal;
 }
 .coffcanvas .content .options .links a:hover{
     text-decoration: none;
@@ -612,6 +616,7 @@ footer{
     line-height: 25px;
     word-break: break-word;
     margin: 0;
+    color: var(--font-secondary);
 }
 .notification i{
     padding: 8px 8px;
@@ -751,4 +756,43 @@ footer{
 .scroll-animation-visible{
     opacity: 1;
     transform: scale(1);
+}
+.box{
+    padding: 3% 4%;
+    border-radius: 24px;
+    background-color: var(--background1);
+    width: 1000px;
+    height: 550px;
+}
+.box .content{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+.box .content .left{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.box .content .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box .content .right img{
+    max-width: 250px;
+}
+.box .content .navigation{
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+.box .content .split img{
+    padding: 0 25px;
+}
+.button-info p{
+    margin: 0;
+    margin-bottom: 5px;
+    color: var(--secondary);
 }

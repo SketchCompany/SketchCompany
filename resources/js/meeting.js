@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         $("head").append(style)
     }
 
+    $("#submit").click(bookMeeting)
+
     const forbiddenUsername = ['"', '§', '$', '%', '&', '/', '\\', '=', '?', '`', '´', '*', ',', ';',':', '<', '>', '²', '³', '{', '}', '[', ']', '^', '|', '~', '@', '€']
     const forbiddenEmail = Array.from(forbiddenUsername)
     forbiddenEmail.push('#', "'", '+', " ")

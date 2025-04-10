@@ -25,7 +25,7 @@ button.play{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 .intro div{
     max-width: 750px;
@@ -36,36 +36,43 @@ button.play{
     background: linear-gradient(var(--background0), var(--background0)) padding-box, linear-gradient(to bottom, var(--primary), var(--secondary) 80%, rgba(80, 0, 255, 1)) border-box;
 }
 
-.advantages{
+.advantages, .techniques, .goals, .start-now{
     margin-top: 200px;
 }
-.advantages .top{
+.advantages .top, .techniques .top, .goals .top, .start-now .top{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
 }
-.advantages .top h1{
+.advantages .top h1, .impressions .top h1, .techniques .top h1, .goals .top h1, .start-now .top h1{
     text-align: center;
 }
-.advantages .list{
+.list-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5em 6em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.list{
     display: flex;
     gap: 50px;
     justify-content: center;
     flex-wrap: wrap;
 }
-.advantages .list .element{
+.list .element, .list-grid .element{
     padding: 30px 35px;
-    width: 425px;
+    max-width: 425px;
     border-radius: 8px;
     background-color: var(--background0);
     border: 2px solid transparent;
     background: linear-gradient(var(--background0), var(--background0)) padding-box, linear-gradient(to bottom, rgb(255, 0, 175), var(--secondary) 80%, rgba(80, 0, 255, 1)) border-box;
 }
-.advantages .list .element p{
+.list .element p, .list-grid .element p{
     text-align: justify;
 }
-.advantages .list :nth-child(2n):not(p){
+.list :nth-child(2n):not(p), .list-grid :nth-child(2n):not(p){
     background: linear-gradient(var(--background0), var(--background0)) padding-box, linear-gradient(to bottom, var(--primary), var(--secondary) 80%, rgba(80, 0, 255, 1)) border-box;
 }
 
@@ -78,9 +85,6 @@ button.play{
 }
 .impressions .top{
     margin-bottom: 50px;
-}
-.impressions .top h1{
-    text-align: center;
 }
 .impressions .navigation{
     display: flex;
@@ -155,40 +159,16 @@ button.play{
     width: 100%;
     font-size: 18px;
 }
-
-.techniques{
-    margin-top: 200px;
-}
-.techniques .top{
+.start-now .content{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    flex-direction: column;
+    gap: 10px;
 }
-.techniques .top h1{
-    text-align: center;
+.start-now .content button{
+    transform: scale(1.25);
 }
-.techniques .list{
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.techniques .list .element{
-    padding: 30px 35px;
-    width: 425px;
-    border-radius: 8px;
-    background-color: var(--background0);
-    border: 2px solid transparent;
-    background: linear-gradient(var(--background0), var(--background0)) padding-box, linear-gradient(to bottom, rgb(255, 0, 175), var(--secondary) 80%, rgba(80, 0, 255, 1)) border-box;
-}
-.techniques .list .element p{
-    text-align: justify;
-}
-.techniques .list :nth-child(2n):not(p){
-    background: linear-gradient(var(--background0), var(--background0)) padding-box, linear-gradient(to bottom, var(--primary), var(--secondary) 80%, rgba(80, 0, 255, 1)) border-box;
-}
-
 
 
 
@@ -223,7 +203,7 @@ button.play{
     width: 500px;
     height: 500px;
     background: linear-gradient(100deg, rgba(0, 255, 128, 0.6), rgba(0, 238, 255, 0.6));
-    top: 10%;
+    top: 15%;
     left: -5%;
 }
 .sphere-2{
@@ -238,7 +218,7 @@ button.play{
     height: 500px;
     background: linear-gradient(100deg, rgba(0, 175, 255, 0.6), rgba(75, 0, 255, 0.6));
     top: 60%;
-    left: 20%;
+    left: 25%;
 }
 .noise-overlay{
     position: absolute;

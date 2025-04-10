@@ -25,17 +25,11 @@
     >
     <link rel="rel-canonical" href="https://sketch-company.de">
 
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self' https:; 
-        style-src 'self' 'unsafe-inline' https://code.jquery.com https://fonts.googleapis.com https://cdn.jsdelivr.net; 
-        script-src 'self' 'unsafe-inline' https://google-analytics.com https://www.googletagmanager.com https://fonts.googleapis.com https://code.jquery.com https://cdn.jsdelivr.net;   
-    ">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
 
-
     <!-- jquery -->
-    <script async src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -74,7 +68,7 @@
         <div class="hero">
             <h1>Sketchy Games Launcher</h1>
             <h2>Unser Launcher für eure Spiele</h2>
-            <button class="marked play" onclick="openSite('/launcher/downloads')"><span class="bi bi-play-circle"></span> Jetzt Spielen</button>
+            <button class="marked play" href="/launcher/downloads"><span class="bi bi-play-circle"></span> Jetzt Spielen</button>
         </div>
         <div class="intro scroll-animation-hidden">
             <div>
@@ -87,7 +81,7 @@
             </div>
         </div>
         <div class="advantages">
-            <div class="top">
+            <div class="top scroll-animation-hidden">
                 <h1>Features des Launchers</h1>
             </div>
             <div class="list">
@@ -119,7 +113,7 @@
             </div>
         </div>
         <div class="impressions scroll-animation-hidden">
-            <div class="top">
+            <div class="top scroll-animation-hidden">
                 <h1>Impressionen aus der 0.0.11 BETA</h1>
             </div>
             <div class="navigation">
@@ -143,8 +137,8 @@
             </div>
         </div>
         <div class="techniques">
-            <div class="top">
-                <h1>Technische Details</h1>
+            <div class="top scroll-animation-hidden">
+                <h1>Wie funktioniert der Launcher</h1>
             </div>
             <div class="list">
                 <div class="element scroll-animation-hidden">
@@ -171,6 +165,62 @@
                         sicher und versteckt bleiben.
                     </p>
                 </div>
+            </div>
+        </div>
+        <div class="goals">
+            <div class="top scroll-animation-hidden">
+                <h1>Zukunft des Launchers</h1>
+            </div>
+            <div class="list-grid">
+                <div class="element scroll-animation-hidden">
+                    <h3>Friends System</h3>
+                    <p>
+                        Wie in jeden anderen Launchern soll auch im Sketchy Games Launcher
+                        ein System zum Zusammenspielen oder Arbeiten intigriet werden. So soll 
+                        man im Launcher Freunde hinzufügen, mit ihnen chatten, vielleicht sogar
+                        einmal mit Voice callen und auf jeden fall auch zusammenspielen. Dazu 
+                        kann man sich auch Dateien in der Größe von maximal 500MB zuschicken kann.
+                    </p>
+                </div>
+                <div class="element scroll-animation-hidden">
+                    <h3>API Einbindung</h3>
+                    <p>
+                        Eine bessere Einbindung der API soll auch mit in den Launcher kommen und 
+                        auch eine öffentliche API nicht nur für den Zugriff auf die Sketch Company 
+                        Accounts sonder auch für kommende Features und Tools. Dabei kann durch 
+                        ein API Token aus jeder Anwendung auf unsere REST API zugegriffen werden,
+                        die dann in JSON formatierte Daten zurückgibt.
+                    </p>
+                </div>
+                <div class="element scroll-animation-hidden">
+                    <h3>Erweiterte Download Funktion</h3>
+                    <p>
+                        Auch die jetztige Download Funktion soll überarbeitet werden. Momentan
+                        wird immer das ganze neue Spiel bei einer neuen Version heruntergeladen,
+                        was bei der kleinen Größe der Spiele erst einmal kein großes Problem ist
+                        jedoch in der Zukunft bei größeren Projekten problematisch wird. Die neue
+                        Download Funktion setzt dabei auf manifestierungen und tracking jeder Dateien.
+                    </p>
+                </div>
+                <div class="element scroll-animation-hidden">
+                    <h3>Payment Methods</h3>
+                    <p>
+                        Wir setzten unseren Fokus immer mehr auf hochwertigere Spiele und können 
+                        dabei nicht immer alles aus eigener Tasche bezahlen. Deshalb werden 
+                        in der Zukunft auch eigene Spiele für einen kleinen Preis erweblich gemacht. 
+                        Natürlich wird es auch immer Rabatte oder Sonderaktionen geben in denen ihr 
+                        unsere Spiele abstauben könnt. Unsere Spiele wollen wir außerdem auch in anderen
+                        Launchers anbieten, wie zum Beispiel Steam.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="start-now">
+            <div class="top scroll-animation-hidden">
+                <h1>Jetzt herunterladen und spielen</h1>
+            </div>
+            <div class="content scroll-animation-hidden">
+                <button class="marked" href="/launcher/downloads"><span class="bi bi-download"></span> Jetzt herunterladen</button>
             </div>
         </div>
     </main>

@@ -37,7 +37,7 @@ function getScriptHash(req){
                     // console.log("name", element.name)
                     // console.log("requestedFile", requestedFile)
                     if(element.name == requestedFile){
-                        console.error("Successfully found script hash for", req.originalUrl)
+                        console.log("Successfully found script hash for", req.originalUrl)
                         cb(element.hash)
                         return
                     }

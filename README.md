@@ -8,10 +8,10 @@ If you want to get more information or have some questions you can visit our [Di
 
 ## Sketchy Games Launcher
 Our latest project is the Sketchy Games Launcher where you can install our softwares and games from. Hint: All of our games and softwares are currently free and there will be more. Some might cost a small amount to finaciate our projects.
-If you'd like to know more about the launcher or like to visit our website and download it you can find it at [https://sketchy-games.sketch-company.de](https://sketchy-games.sketch-company.de). (This website is actually on an old version and will be updated soon.)
+If you'd like to know more about the launcher or like to visit our website and download it you can find it at [https://sketch-company.de](https://sketch-company.de).
 
 ## Website 
-Our current offical Website: [https://sketchy-games.sketch-company.de](https://sketchy-games.sketch-company.de)
+Our current offical Website: [https://sketch-company.de](https://sketch-company.de)
 
 ## Quick Type
 QuickType is our own programming language and you can use it by installing ```node.js``` and downloading the ```quicktypels``` node package. You also need to have ```typescript``` globally installed on your computer. For VSCode, we also have an extension for easier development.

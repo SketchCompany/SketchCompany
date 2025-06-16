@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename)
 const BASE_DIR = __dirname + "/frontend/"
 const RESOURCES_DIR = __dirname + "/resources/"
 const LAUNCHER_FILES_DIR = __dirname + "/launcher/"
+const FRIENDLYFIRE_FILES_DIR = __dirname + "/friendlyfire/";
 
 function readScriptHashes(){
     return new Promise(async cb => {
@@ -75,14 +76,42 @@ app.get("/robots.txt", (req, res) => {
 app.get("/sitemap.xml", (req, res) => {
     res.sendFile(__dirname + "/data/sitemap.xml")
 })
-app.get("/launcher/downloads/:version", async (req, res) => {
+app.get("/friendlyfire/downloads/:platform/:version", async (req, res) => {
+  try {
+    switch (req.params.platform) {
+      case "windows":
+        res.download(getWindowsFriendlyFireVersion(req.params.version));
+        break;
+      default:
+        res.download(getWindowsFriendlyFireVersion(req.params.version));
+        break;
+    }
+  } catch (err) {
+    console.log(err);
+    res.redirect("/error?m=We don't know what to do either.<br>" + err);
+  }
+});
+function getWindowsFriendlyFireVersion(version) {
+  switch (version) {
+    case "latest":
+      return FRIENDLYFIRE_FILES_DIR + "FriendlyFire-1.0.3 Setup.exe";
+    case "0.0.11":
+      return FRIENDLYFIRE_FILES_DIR + "FriendlyFire-1.0.3 Setup.exe";
+    default:
+      return FRIENDLYFIRE_FILES_DIR + "FriendlyFire-1.0.3 Setup.exe";
+  }
+}
+app.get("/launcher/downloads/:platform/:version", async (req, res) => {
     try{
-        switch(req.params.version){
-            case "latest": 
-                res.download(LAUNCHER_FILES_DIR + "Sketchy.Games.Launcher-0.0.11.Setup.exe")
+        switch(req.params.platform){
+            case "macos":
+                res.download(getMacOSLauncherVersion(req.params.version))
                 break
-            default: 
-                res.download(LAUNCHER_FILES_DIR + "Sketchy.Games.Launcher-0.0.11.Setup.exe") 
+            case "windows":
+                res.download(getWindowsLauncherVersion(req.params.version))
+                break
+            default:
+                res.download(getWindowsLauncherVersion(req.params.version))
                 break
         }
     }
@@ -90,6 +119,43 @@ app.get("/launcher/downloads/:version", async (req, res) => {
         console.log(err)
         res.redirect("/error?m=We don't know what to do either.<br>" + err)
     }
+})
+function getWindowsLauncherVersion(version){
+    switch(version){
+        case "latest": 
+            return (LAUNCHER_FILES_DIR + "Sketchy.Games.Launcher-0.0.11.Setup.exe")
+        case "0.0.11": 
+            return (LAUNCHER_FILES_DIR + "Sketchy.Games.Launcher-0.0.11.Setup.exe")
+        default: 
+            return (LAUNCHER_FILES_DIR + "Sketchy.Games.Launcher-0.0.11.Setup.exe") 
+    }
+}
+function getMacOSLauncherVersion(version){
+    switch(version){
+        case "latest": 
+            return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.11-arm64.dmg")
+        case "0.0.11":
+            return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.11-arm64.dmg")
+        default: 
+            return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.11-arm64.dmg") 
+    }
+}
+
+const faviconSizes = [
+    "favicon.ico",
+    "favicon.png",
+    "favicon16x16.png",
+    "favicon32x32.png",
+    "favicon48x48.png",
+    "favicon180x180.png",
+    "favicon192x192.png",
+    "favicon256x256.png",
+    "favicon512x512.png"
+]
+faviconSizes.forEach((favicon) => {
+    app.get(`/${favicon}`, (req, res) => {
+        res.sendFile(RESOURCES_DIR + "img/" + favicon)
+    })
 })
 
 app.get("/res", (req, res) => {

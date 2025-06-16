@@ -38,6 +38,7 @@ $(document).ready(async function(){
             <span class="right">
                 <a href="/meeting"><span class="bi bi-chat-left-text"></span> Erstgespräch</a>
                 <a href="/launcher"><span class="bi bi-rocket"></span> Launcher</a>
+                <a href="/friendlyfire"><span class="bi bi-fire"></span> FriendlyFire</a>
                 <a href="https://sketchy-games.sketch-company.de" target="_blank"><span class="bi bi-controller"></span> Spiele</a>
                 <a href="/login?r=/" class="marked login-element"><span class="bi bi-person"></span> Anmelden</a>
                 <span class="button-toggleOffcanvas bi bi-list"></span>
@@ -56,6 +57,7 @@ $(document).ready(async function(){
                             <a href="/login?r=/" class="marked login-element"><span class="bi bi-person"></span> Anmelden</a>
                             <a href="/meeting" class="marked"><span class="bi bi-chat-left-text"></span> Kostenloses Erstgespräch</a>
                             <a href="/launcher" class="marked-reverse"><span class="bi bi-rocket"></span> Sketchy Games Launcher</a>
+                            <a href="/friendlyfire"><span class="bi bi-fire"></span> FriendlyFire</a>
                             <a href="https://sketchy-games.sketch-company.de"><span class="bi bi-controller"></span> Sketchy Games</a>
                             <a href="https://tictactoe.sketch-company.de"><img class="icon" src="/res?f=img/tictactoe_icon.webp" alt="Online TicTacToe Icon"> Online TicTacToe</a>
                         </div>
@@ -64,7 +66,7 @@ $(document).ready(async function(){
             </div>
             <div class="background"></div>
         </div>
-    `)
+    `);
     $("body").append(`
         <footer>
             <p>© ${new Date().getFullYear().toString()} Sketch Company | <a href="https://rights.sketch-company.de/#impressum">Impressum</a> | <a href="https://rights.sketch-company.de/#datenschutzerklärung">Datenschutzerklärung</a> | <a href="https://rights.sketch-company.de/#urheberrecht">Urheberrecht</a></p>
@@ -145,6 +147,10 @@ $(document).ready(async function(){
             }
             input, textarea{
                 width: 100%;
+            }
+            .box{
+                padding: 20px 20px;
+                border-radius: 16px;
             }
         `)
         minScroll = 60

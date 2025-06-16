@@ -6,6 +6,7 @@ Allow: /
 Allow: /meeting
 Allow: /launcher
 Allow: /launcher/downloads
+Allow: /friendlyfire
 
 Sitemap: https://sketch-company.de/sitemap.xml
 

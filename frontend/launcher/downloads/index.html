@@ -46,7 +46,11 @@
     <script defer src="/res?f=js/downloads.js"></script>
 
     <!-- Resources -->
-    <link rel="icon" href="/res?f=img/favicon.ico">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    
     <link rel="stylesheet" type="text/css" href="/res?f=css/body.css">
     <link rel="stylesheet" type="text/css" href="/res?f=css/downloads.css">
 
@@ -66,10 +70,10 @@
                     um alle Games und Softwares problemfrei nutzen zu können.
                 </p>
             </div>
-            <div class="box">
-                <div class="content">
+            <div class="box interactable">
+                <div class="content active">
                     <div class="left">
-                        <h3 class="topic">Verfügbare Downloads</h3>
+                        <h3 class="topic">Download für Windows (.exe)</h3>
                         <h2>Sketchy Games Launcher</h2>
                         <h3><span class="bi bi-windows"></span> BETA 0.0.11</h3>
                         <p>
@@ -77,7 +81,29 @@
                             wie den kostenlosen Zugriff auf alle Spiele und Softwares sowie Chat und Datei Austausch
                             und automatische Updates.
                         </p>
-                        <button class="marked" href="/launcher/downloads/latest"><span class="bi bi-download"></span> Download Starten</button>
+                        <button class="marked" href="/launcher/downloads/windows/latest"><span class="bi bi-download"></span> Download Starten</button>
+                        <div class="navigation">
+                            <button class="button-next"> <span class="bi bi-apple"></span> MacOS <span class="bi bi-arrow-right"></span></button>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img loading="lazy" src="/res?f=img/download_launcher.webp" alt="Download Launcher Icon">
+                    </div>
+                </div>
+                <div class="content" style="display: none;">
+                    <div class="left">
+                        <h3 class="topic">Download für MacOS (.dmg)</h3>
+                        <h2>Sketchy Games Launcher</h2>
+                        <h3><span class="bi bi-apple"></span> BETA 0.0.11</h3>
+                        <p>
+                            Downloade die aktuellste Version des Launchers für MacOS und nutze die besten Funktionen, 
+                            wie den kostenlosen Zugriff auf alle Spiele und Softwares sowie Chat und Datei Austausch
+                            und automatische Updates.
+                        </p>
+                        <button class="marked" href="/launcher/downloads/macos/latest"><span class="bi bi-download"></span> Download Starten</button>
+                        <div class="navigation">
+                            <button class="button-prev"><span class="bi bi-arrow-left"></span> <span class="bi bi-windows"></span> Windows</button>
+                        </div>
                     </div>
                     <div class="right">
                         <img loading="lazy" src="/res?f=img/download_launcher.webp" alt="Download Launcher Icon">
@@ -85,12 +111,12 @@
                 </div>
             </div>
         </div>
-        <div class="installation">
+        <div class="installation installation-windows">
             <div class="top">
                 <h3>Fortfahren</h3>
-                <h1>Installations Guide</h1>
+                <h1>Windows Installations Guide</h1>
                 <p>
-                    Hier findest du eine detaillierte Anleitung zum Installieren des Sketchy Games Launchers.
+                    Hier findest du eine detaillierte Anleitung zum Installieren des Sketchy Games Launchers auf Windows.
                     Falls du Fragen hast, trete unserem <a href="https://discord.gg/u94GDJycP4">Discord Server</a> bei oder schreib uns eine <a href="mailto:sketch-company@web.de">E-Mail</a>.
                 </p>
             </div>
@@ -101,12 +127,12 @@
                         <h2>Herunterladen</h2>
                         <p>
                             Lade die neuste Version herunter oder wähle eine Version deiner Wahl herunter. Starte den Download,
-                            indem du dir oben deine Version aussuchst und dann auf "Download Starten" klickst, oder direkt hier 
+                            indem du dir oben deine Version für Windows aussuchst und dann auf "Download Starten" klickst, oder direkt hier 
                             auf den Download Button klickst, bei dem du die neuste Version herunterladen kannst.
                         </p>
                         <div class="button-info">
                             <p><span class="bi bi-info-circle"></span> Noch kein Download gestartet?</p>
-                            <button class="marked" href="/launcher/downloads/latest"><span class="bi bi-download"></span> Download Starten für <span class="bi bi-windows"></span> <span class="bold">Windows</span></button>
+                            <button class="marked" href="/launcher/downloads/windows/latest"><span class="bi bi-download"></span> Download Starten für <span class="bi bi-windows"></span> <span class="bold">Windows</span></button>
                         </div>
                         <div class="navigation">
                             <button class="button-next">Nächster Schritt <span class="bi bi-arrow-right"></span></button>
@@ -138,7 +164,7 @@
                         <h3 class="topic">Schritt 3/4</h3>
                         <h2>Launcher ausführen</h2>
                         <p>
-                            Nachdem das Setup dss Launchers beendet wurde, kannst du diesen mit dem Icon auf deinem Desktop
+                            Nachdem das Setup des Launchers beendet wurde, kannst du diesen mit dem Icon auf deinem Desktop
                             oder durch das Startmenü ausführen, wenn dies nach der Installation nicht schon automatisch passiert ist.
                         </p>
                         <div class="navigation">
@@ -156,13 +182,108 @@
                         <h2>Fertig 🎉</h2>
                         <p>
                             Jetzt kannst du den Launcher immer wieder aus dem Startmenü oder über den Desktop verwenden und jederzeit
-                            deine Spiele und Softwars nutzen. Falls noch Fragen bestehen oder du Hilfe brauchst, dann kannst du unserem
+                            deine Spiele und Softwares nutzen. Falls noch Fragen bestehen oder du Hilfe brauchst, dann kannst du unserem
                             <a href="https://discord.gg/u94GDJycP4">Discord</a> joinen oder uns eine <a href="mailto:sketch-company@web.de">E-Mail schreiben</a>.
                         </p>
                         <div class="button-info">
                             <p><span class="bi bi-info-circle"></span> Du brauchst Hilfe?</p>
-                            <button class="marked" href="https://discord.gg/u94GDJycP4"><span class="bi bi-discord"></span> Discord Server Beitreten</button>
-                            <button class="marked" href="mailto:Sketch Company <sketch-company@web.de>"><span class="bi bi-envelope-fill"></span> E-Mail Schreiben</button>
+                            <span style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <button class="marked" href="https://discord.gg/u94GDJycP4"><span class="bi bi-discord"></span> Discord Server Beitreten</button>
+                                <button class="marked" href="mailto:Sketch Company <sketch-company@web.de>"><span class="bi bi-envelope-fill"></span> E-Mail Schreiben</button>
+                            </span>
+                        </div>
+                        <div class="navigation">
+                            <button class="button-prev"><span class="bi bi-arrow-left"></span> Schritt Zurück</button>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img loading="lazy" src="/res?f=img/launcher_icon.webp" alt="Launcher Icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="installation">
+            <div class="top">
+                <h3>Fortfahren</h3>
+                <h1>MacOS Installations Guide</h1>
+                <p>
+                    Hier findest du eine detaillierte Anleitung zum Installieren des Sketchy Games Launchers auf MacOS.
+                    Falls du Fragen hast, trete unserem <a href="https://discord.gg/u94GDJycP4">Discord Server</a> bei oder schreib uns eine <a href="mailto:sketch-company@web.de">E-Mail</a>.
+                </p>
+            </div>
+            <div class="box interactable">
+                <div class="content active">
+                    <div class="left">
+                        <h3 class="topic">Schritt 1/4</h3>
+                        <h2>Herunterladen</h2>
+                        <p>
+                            Lade die neuste Version herunter oder wähle eine Version deiner Wahl herunter. Starte den Download,
+                            indem du dir oben deine Version für MacOS aussuchst und dann auf "Download Starten" klickst, oder direkt hier 
+                            auf den Download Button klickst, bei dem du die neuste Version herunterladen kannst.
+                        </p>
+                        <div class="button-info">
+                            <p><span class="bi bi-info-circle"></span> Noch kein Download gestartet?</p>
+                            <button class="marked" href="/launcher/downloads/macos/latest"><span class="bi bi-download"></span> Download Starten für <span class="bi bi-apple"></span> <span class="bold">MacOS</span></button>
+                        </div>
+                        <div class="navigation">
+                            <button class="button-next">Nächster Schritt <span class="bi bi-arrow-right"></span></button>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img loading="lazy" src="/res?f=img/download_icon.webp" alt="Download Icon">
+                    </div>
+                </div>
+                <div class="content" style="display: none;">
+                    <div class="left">
+                        <h3 class="topic">Schritt 2/4</h3>
+                        <h2>Installation Starten</h2>
+                        <p>
+                            Wenn die Setup Datei heruntergeladen wurde, musst du im neu geöffneten Fenster das Icon des Launchers in den Ordner "Applications" ziehen,
+                            um den Launcher zu deinen installierten Programmen hinzuzufügen. Das dauert wenige Sekunden, danach kannst du das Fenster wieder schließen.
+                            Nun sollte der Sketchy Games Launcher erfolgreich installiert worden sein.
+                        </p>
+                        <div class="navigation">
+                            <button class="button-prev"><span class="bi bi-arrow-left"></span> Schritt Zurück</button>
+                            <button class="button-next">Nächster Schritt <span class="bi bi-arrow-right"></span></button>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img loading="lazy" src="/res?f=img/setup_icon.webp" alt="Setup Icon">
+                    </div>
+                </div>
+                <div class="content" style="display: none;">
+                    <div class="left">
+                        <h3 class="topic">Schritt 3/4</h3>
+                        <h2>Launcher ausführen</h2>
+                        <p>
+                            Nachdem das Setup des Launchers beendet wurde, kannst du diesen mit dem Icon auf deinem Desktop, im Finder 
+                            oder durch das Launchpad ausführen.
+                        </p>
+                        <div class="navigation">
+                            <button class="button-prev"><span class="bi bi-arrow-left"></span> Schritt Zurück</button>
+                            <button class="button-next">Nächster Schritt <span class="bi bi-arrow-right"></span></button>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img loading="lazy" src="/res?f=img/launcher_icon.webp" alt="Launcher Icon">
+                    </div>
+                </div>
+                <div class="content" style="display: none;">
+                    <div class="left">
+                        <h3 class="topic">Schritt 4/4</h3>
+                        <h2>Fertig 🎉</h2>
+                        <p>
+                            Jetzt kannst du den Launcher immer wieder aus dem Launchpad, im Finder oder über den Desktop verwenden und jederzeit
+                            deine Spiele und Softwares nutzen. Falls noch Fragen bestehen oder du Hilfe brauchst, dann kannst du unserem
+                            <a href="https://discord.gg/u94GDJycP4">Discord</a> joinen oder uns eine <a href="mailto:sketch-company@web.de">E-Mail schreiben</a>.
+                        </p>
+                        <div class="button-info">
+                            <p><span class="bi bi-info-circle"></span> Du brauchst Hilfe?</p>
+                            <span style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                <button class="marked" href="https://discord.gg/u94GDJycP4"><span class="bi bi-discord"></span> Discord Server Beitreten</button>
+                                <button class="marked" href="mailto:Sketch Company <sketch-company@web.de>"><span class="bi bi-envelope-fill"></span> E-Mail Schreiben</button>
+                            </span>
                         </div>
                         <div class="navigation">
                             <button class="button-prev"><span class="bi bi-arrow-left"></span> Schritt Zurück</button>

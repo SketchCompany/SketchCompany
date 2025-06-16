@@ -10,3 +10,8 @@
 #submit{
     min-width: 125px;
 }
+@media screen and (max-width: 1700px) {
+    .info{
+        flex-direction: column;
+    }
+}

@@ -73,8 +73,8 @@ async function bookMeeting(){
         if (
             $("#nameInvalid").hasClass("invalid") ||
             $("#emailInvalid").hasClass("invalid")
-        ) {
-            notify("Fehlgeschalgen", "Deine Registrierungsdaten sind ungültig. Überprüfe sie und probiers nochmal.", "error")
+        ){
+            notify("Fehlgeschlagen", "Deine Registrierungsdaten sind ungültig. Überprüfe sie und probiers nochmal.", "error")
             console.error("invalid sign up")
             return
         }

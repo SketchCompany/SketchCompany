@@ -97,7 +97,7 @@ router.post("/book-meeting", async (req, res) => {
     try{
         if(req.body.name && req.body.email && req.body.message){
             const data = {user: "Sketchy", email: "sketch-company@web.de", subject: req.body.name + " möchte ein Erstgespräch mit dir", message: req.body.message + "\n\n<h2>Raw:</h2><pre>" + JSON.stringify(req.body, null, 3) + "</pre>"}
-            const response = await func.send("https://localhost:3500/email", data, true)
+            const response = await func.send("http://localhost:3500/email", data, true)
             if(response.status == 1){
                 const data = {user: req.body.name, email: req.body.email, subject: "Dein Erstgespräch wurde gebucht", message: "danke für dein Interesse bei mir! Ich werde dich sobald wie möglich kontaktieren und mich mit dir in Verbindung setzen. Du hast dabei die Wahl ob wir uns per E-Mail, Telefon oder Video-Call unterhalten sollen. Um dich schneller zu kontaktieren kannst du dem Link unten folgen, um dir dein gewünschtes Kommunikationsmedium auszusuchen.\n\nKlicke diesen Link an, um zur Auswahl deines Kommunikationsmedium zu kommen:\nhttps://sketch-company.de/meeting/communication"}
                 const response2 = await func.send("http://localhost:3500/email", data, true)

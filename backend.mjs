@@ -1,4 +1,4 @@
-import express from "express"
+import express, { response } from "express"
 import jwt from "jsonwebtoken"
 import fs from "fs"
 import path from 'path'
@@ -96,25 +96,32 @@ router.get("/data/:file", async (req, res) => {
 router.post("/book-meeting", async (req, res) => {
     try{
         if(req.body.name && req.body.email && req.body.message){
-            const data = {user: "Sketchy", email: "sketch-company@web.de", subject: req.body.name + " möchte ein Erstgespräch mit dir", message: req.body.message + "\n\n<h2>Raw:</h2><pre>" + JSON.stringify(req.body, null, 3) + "</pre>"}
+            const data = {
+                user: req.body.name, 
+                email: req.body.email, 
+                subject: "Dein Erstgespräch wurde gebucht", 
+                message: `
+                
+                danke für dein Interesse bei mir! Ich werde dich sobald wie möglich kontaktieren und mich mit dir in Verbindung setzen. 
+                Du hast dabei die Wahl ob wir uns per E-Mail, Telefon oder Video-Call unterhalten sollen. 
+                Um dich schneller zu kontaktieren kannst du dem Link unten folgen, um dir dein gewünschtes Kommunikationsmedium auszusuchen.\n
+                \n
+                Klicke diesen Link an, um zur Auswahl deines Kommunikationsmedium zu kommen:\n
+                https://sketch-company.de/meeting/communication
+                
+                `
+            }
             const response = await func.send("http://localhost:3500/email", data, true)
+            
             if(response.status == 1){
-                const data = {user: req.body.name, email: req.body.email, subject: "Dein Erstgespräch wurde gebucht", message: "danke für dein Interesse bei mir! Ich werde dich sobald wie möglich kontaktieren und mich mit dir in Verbindung setzen. Du hast dabei die Wahl ob wir uns per E-Mail, Telefon oder Video-Call unterhalten sollen. Um dich schneller zu kontaktieren kannst du dem Link unten folgen, um dir dein gewünschtes Kommunikationsmedium auszusuchen.\n\nKlicke diesen Link an, um zur Auswahl deines Kommunikationsmedium zu kommen:\nhttps://sketch-company.de/meeting/communication"}
-                const response2 = await func.send("http://localhost:3500/email", data, true)
-                if(response2.status == 1){
-                    res.json({
-                        status: 1,
-                        data: {response, response2}
-                    })
-                }
-                else{
-                    res.json({
-                        status: 0,
-                        data: {response, response2}
-                    })
-                }
+                sendToMe(req.body)
+                res.json({
+                    status: 1,
+                    data: response
+                })
             }
             else{
+                console.error(req.path, "error sending email", response)
                 res.json({
                     status: 0,
                     data: response
@@ -136,5 +143,16 @@ router.post("/book-meeting", async (req, res) => {
         })
     }
 })
+
+async function sendToMe(data){
+    const mailOptions = {
+        user: "Sketchy", 
+        email: "sketch-company@web.de", 
+        subject: data.name + " möchte ein Erstgespräch mit dir", 
+        message: data.message + "\n\n<h2>Raw:</h2><pre>" + JSON.stringify(data, null, 3) + "</pre>"
+    }
+    const response = await func.send("http://localhost:3500/email", mailOptions, true)
+    console.log("sendToMe: response", response)
+}
 
 export default {router}

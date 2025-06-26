@@ -3,6 +3,7 @@ Disallow: /error/
 Disallow: /search?q=
 
 Allow: /
+Allow: /login
 Allow: /meeting
 Allow: /launcher
 Allow: /launcher/downloads

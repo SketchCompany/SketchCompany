@@ -157,7 +157,7 @@ button.play{
 }
 .impressions .mobile-navigation button{
     width: 100%;
-    font-size: 18px;
+    /* font-size: 18px; */
 }
 .start-now .content{
     display: flex;

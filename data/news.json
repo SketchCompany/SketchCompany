@@ -6,9 +6,9 @@
         "link": "/launcher"
     },
     {
-        "title": "Quantum Drifter", 
-        "description": "This is the third hero image", 
-        "image": "/res?f=heros/hero1 small.webp",
+        "title": "FriendlyFire", 
+        "description": "FriendlyFire ist ein kleines Programm, dass momentan nur auf Windows läuft, aber bald auch auf MacOS zur verfügung stehen wird. Mit diesem Programm kannst du Dateien in Größe von 10GB an deine Feunde versenden. Dazu musst du nur deine Freunde im Programm hinzufügen und ihr beide müsst natürlich ein Sketch Company Account besitzen und euch vorher anmelden. Sobald du eine Datei erfolgreich an deine:n Freund:in gesendet hast, bekommt diese:r innerhalb von 30 Sekunden oder weniger eine Benachrichtigung zum Download. Nicht wie bei Google Drive, bei dem du deine Dateien erst wieder Freigeben musst. Mehr über die Features und das Programm kannst du <a href='/friendlyfire'>hier finden</a>.", 
+        "image": "/res?f=heros/hero3.webp",
         "link": "/"
     },
     {

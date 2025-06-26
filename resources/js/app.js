@@ -86,9 +86,9 @@ $(document).ready(async function(){
                 padding: 1.5rem 10px;
             }
             p{
-                text-align: justify;
+                
                 font-size: 85%;
-                line-height: 22px;
+                
             }
             header{
                 padding: 10px var(--padding);
@@ -135,6 +135,7 @@ $(document).ready(async function(){
                 font-size: 38px;
                 line-height: 40px;
                 margin-bottom: 15px;
+                font-weight: 600;
             }
             h2{
                 font-size: 160%;
@@ -151,6 +152,9 @@ $(document).ready(async function(){
             .box{
                 padding: 20px 20px;
                 border-radius: 16px;
+            }
+            footer p{
+                text-align: center;
             }
         `)
         minScroll = 60

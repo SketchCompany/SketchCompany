@@ -3,6 +3,7 @@ functions.mjs
 /launcher
 /friendlyfire
 scriptHashes.json
+.DS_Store
 
 # Logs
 logs

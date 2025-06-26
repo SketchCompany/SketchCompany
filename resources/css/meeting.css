@@ -7,6 +7,9 @@
 .info .top{
     max-width: 800px;
 }
+.info .box{
+    min-width: 800px;
+}
 #submit{
     min-width: 125px;
 }

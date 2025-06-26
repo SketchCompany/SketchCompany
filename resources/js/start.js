@@ -57,21 +57,36 @@ document.addEventListener("DOMContentLoaded", () => {
                 flex-direction: column-reverse;
             }
             .news .content .text{
-                height: 400px;
-                max-height: 400px;
+                height: 475px;
+                max-height: 475px;
                 padding: 20px;
             }
             .news .navigation .images{
                 height: 200px;
             }
-            .block img{
-                width: 75%;
+            .about, .together, .services, .service, .soloutions, .procedure, .support, .features{
+                margin-top: 150px;
             }
-            .block .text{
-                padding: 25px 20px;
+            .about .content{
+                flex-direction: column;
             }
-            .features{
-                margin-top: 100px;
+            .about .content div h3{
+                text-align: center;
+            }
+            .about .content div p{
+                text-align: center;
+                font-size: 16px;
+            }
+            .services p{
+                font-size: 85%;
+            }
+            .service .example img{
+                width: 100%;
+                height: fit-content;
+                border-radius: 6px;
+            }
+            .service-comment{
+                text-align: center;
             }
             .features .top{
                 margin-bottom: 50px;
@@ -97,12 +112,13 @@ document.addEventListener("DOMContentLoaded", () => {
             .offers .list .element.marked .suggestions-text{
                 top: -35px;
             }
-        `)
+        `);
         $("head").append(style)
     }
 
-    fetchNewsData()
-    setPause()
+    //fetchNewsData()
+    //setPause()
+    setClickables()
 })
 const time = 8 * 1000
 let lastChange = Date.now()
@@ -119,13 +135,13 @@ function startLoop(data){
                 lastChange = Date.now()
                 if(element.next().length > 0){
                     element.next().css("display", "block")
-                    $(".news .content h2").text(data[i + 1].title)
-                    $(".news .content p").text(data[i + 1].description)
+                    $(".news .content h2").html(data[i + 1].title)
+                    $(".news .content p").html(data[i + 1].description)
                 }
                 else{
                     element.parent().children().first().css("display", "block")
-                    $(".news .content h2").text(data[0].title)
-                    $(".news .content p").text(data[0].description)
+                    $(".news .content h2").html(data[0].title)
+                    $(".news .content p").html(data[0].description)
                 }
                 break
             }
@@ -143,8 +159,8 @@ async function fetchNewsData(){
             $(".news .navigation .images").append(image)
         }
         $(".news .navigation .images").children().first().css("display", "block")
-        $(".news .content h2").text(data[0].title)
-        $(".news .content p").text(data[0].description)
+        $(".news .content h2").html(data[0].title)
+        $(".news .content p").html(data[0].description)
         $(".news .content .more").attr("href", data[0].link)
 
         if(isMobile()){
@@ -170,14 +186,14 @@ function next(data){
             lastChange = Date.now()
             if(element.next().length > 0){
                 element.next().css("display", "block")
-                $(".news .content h2").text(data[i + 1].title)
-                $(".news .content p").text(data[i + 1].description)
+                $(".news .content h2").html(data[i + 1].title)
+                $(".news .content p").html(data[i + 1].description)
                 $(".news .content .more").attr("href", data[i + 1].link)
             }
             else{
                 element.parent().children().first().css("display", "block")
-                $(".news .content h2").text(data[0].title)
-                $(".news .content p").text(data[0].description)
+                $(".news .content h2").html(data[0].title)
+                $(".news .content p").html(data[0].description)
                 $(".news .content .more").attr("href", data[0].link)
             }
             break
@@ -192,14 +208,14 @@ function prev(data){
             lastChange = Date.now()
             if(element.prev().length > 0){
                 element.prev().css("display", "block")
-                $(".news .content h2").text(data[i - 1].title)
-                $(".news .content p").text(data[i - 1].description)
+                $(".news .content h2").html(data[i - 1].title)
+                $(".news .content p").html(data[i - 1].description)
                 $(".news .content .more").attr("href", data[i - 1].link)
             }
             else{
                 element.parent().children().last().css("display", "block")
-                $(".news .content h2").text(data[data.length - 1].title)
-                $(".news .content p").text(data[data.length - 1].description)
+                $(".news .content h2").html(data[data.length - 1].title)
+                $(".news .content p").html(data[data.length - 1].description)
                 $(".news .content .more").attr("href", data[data.length - 1].link)
             }
             break
@@ -218,5 +234,15 @@ function setPause(){
             $(".pause").children().first().addClass("bi-pause")
             paused = false
         }
+    })
+}
+function setClickables(){
+    const clickables = $(".example .clickable").get()
+    clickables.forEach((element, i) => {
+        $(element).click(function(){
+            const clickable = $(element)
+            const href = clickable.parent().find("button").attr("href")
+            openSite(href, "_blank")
+        })
     })
 }

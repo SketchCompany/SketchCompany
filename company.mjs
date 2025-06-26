@@ -133,11 +133,13 @@ function getWindowsLauncherVersion(version){
 function getMacOSLauncherVersion(version){
     switch(version){
         case "latest": 
-            return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.11-arm64.dmg")
+            return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.12-arm64.dmg")
         case "0.0.11":
             return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.11-arm64.dmg")
+        case "0.0.12":
+            return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.12-arm64.dmg")
         default: 
-            return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.11-arm64.dmg") 
+            return (LAUNCHER_FILES_DIR + "Sketchy Games Launcher-0.0.12-arm64.dmg") 
     }
 }
 

@@ -84,13 +84,17 @@ async function bookMeeting(){
         const name = $("#name").val()
         const email = $("#email").val().trim()
         const message = $("#message").val()
+
+        console.time("timer")
         
         const response = await send("/b/book-meeting", {name, email, message}, true)
         if(response.status == 1){
+            console.timeEnd("timer")
             notify("Gebucht", "Deine Buchung wurde erfolgreich verarbeitet. Du bekommst sobald wie möglich eine Antwort von mir!", "success")
             $("#submit").html("<span class=\"bi bi-check2-square\"></span> Gebucht")
         }
         else{
+            console.timeEnd("timer")
             notify("Oh...", response.data, "error")
             $("#submit").removeAttr("disabled")
             $("#submit").html("<span class=\"bi bi-check2-square\"></span> Buchen")

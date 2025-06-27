@@ -98,13 +98,16 @@ button.play{
 .impressions .navigation .content{
     position: absolute;
     width: 100%;
-    height: 200px;
+    height: 225px;
     bottom: 0;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85) 65%, rgba(0, 0, 0, 0.1) 90%, transparent);
     color: var(--font-tertiary);
     padding: 30px 75px;
     border-radius: 8px;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .impressions .navigation .content p{
     color: var(--gray);

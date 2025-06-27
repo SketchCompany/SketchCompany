@@ -1,6 +1,12 @@
 User-agent: *
 Disallow: /error/
+Disallow: /error?m=
 Disallow: /search?q=
+Disallow: /projects/
+Disallow: /service/
+Disallow: /unity/
+Disallow: /games/
+Disallow: /games?name=
 
 Allow: /
 Allow: /login

@@ -88,6 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
             .service-comment{
                 text-align: center;
             }
+            .support .advantages{
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                flex-direction: column;
+            }
             .features .top{
                 margin-bottom: 50px;
             }

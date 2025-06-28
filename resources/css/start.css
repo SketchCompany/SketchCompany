@@ -435,6 +435,9 @@
     align-items: center;
     flex-direction: column;
 }
+.support .top{
+    text-align: center;
+}
 .support .advantages{
     margin-top: 25px;
     display: flex;

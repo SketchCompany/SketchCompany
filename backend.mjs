@@ -113,11 +113,6 @@ router.post("/book-meeting", async (req, res) => {
                 `,
             };
 
-            data.message = data.message.replaceAll(
-              "<a ",
-              '<a style="color: mediumspringgreen; text-decoration: none;" '
-            );
-
             sendEmailSync(data)
             sendToMeSync(req.body)
 
